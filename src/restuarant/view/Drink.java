@@ -9,12 +9,12 @@ package restuarant.view;
  *
  * @author ASUS
  */
-public class Maindish extends javax.swing.JFrame {
+public class Drink extends javax.swing.JFrame {
 
     /**
-     * Creates new form Maindish
+     * Creates new form Drink
      */
-    public Maindish() {
+    public Drink() {
         initComponents();
     }
 
@@ -36,43 +36,38 @@ public class Maindish extends javax.swing.JFrame {
         pic3 = new javax.swing.JPanel();
         pic4 = new javax.swing.JPanel();
         pic1 = new javax.swing.JPanel();
-        Background1 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
-        Homepage.setBackground(new java.awt.Color(153, 153, 153));
-        Homepage.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Homepage.setForeground(new java.awt.Color(255, 255, 255));
+        Homepage.setBackground(new java.awt.Color(227, 178, 80));
+        Homepage.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         Homepage.setText("Homepage");
         getContentPane().add(Homepage);
-        Homepage.setBounds(220, 120, 120, 30);
+        Homepage.setBounds(230, 170, 120, 40);
 
-        Mandish.setBackground(new java.awt.Color(153, 153, 153));
-        Mandish.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Mandish.setForeground(new java.awt.Color(255, 255, 255));
+        Mandish.setBackground(new java.awt.Color(227, 178, 80));
+        Mandish.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Mandish.setText("Maindish");
         getContentPane().add(Mandish);
-        Mandish.setBounds(340, 120, 130, 30);
+        Mandish.setBounds(470, 170, 120, 40);
 
-        Dessert.setBackground(new java.awt.Color(153, 153, 153));
-        Dessert.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Dessert.setForeground(new java.awt.Color(255, 255, 255));
+        Dessert.setBackground(new java.awt.Color(227, 178, 80));
+        Dessert.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Dessert.setText("Dessert");
         getContentPane().add(Dessert);
-        Dessert.setBounds(470, 120, 130, 30);
+        Dessert.setBounds(710, 170, 120, 40);
 
-        SignOut.setBackground(new java.awt.Color(153, 153, 153));
-        SignOut.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setBackground(new java.awt.Color(227, 178, 80));
+        SignOut.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         SignOut.setText("Sign-Out");
         getContentPane().add(SignOut);
-        SignOut.setBounds(730, 120, 130, 30);
+        SignOut.setBounds(590, 170, 120, 40);
 
-        Drink.setBackground(new java.awt.Color(153, 153, 153));
-        Drink.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Drink.setForeground(new java.awt.Color(255, 255, 255));
+        Drink.setBackground(new java.awt.Color(227, 178, 80));
+        Drink.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Drink.setText("Drinks");
         Drink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +75,7 @@ public class Maindish extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Drink);
-        Drink.setBounds(600, 120, 130, 30);
+        Drink.setBounds(350, 170, 120, 40);
 
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -97,7 +92,7 @@ public class Maindish extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic2);
-        pic2.setBounds(590, 220, 170, 140);
+        pic2.setBounds(580, 240, 170, 140);
 
         pic3.setBackground(new java.awt.Color(255, 255, 255));
         pic3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -114,7 +109,7 @@ public class Maindish extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic3);
-        pic3.setBounds(270, 450, 170, 140);
+        pic3.setBounds(270, 440, 170, 140);
 
         pic4.setBackground(new java.awt.Color(255, 255, 255));
         pic4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -131,7 +126,7 @@ public class Maindish extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic4);
-        pic4.setBounds(600, 450, 170, 140);
+        pic4.setBounds(590, 440, 170, 140);
 
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -148,11 +143,11 @@ public class Maindish extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic1);
-        pic1.setBounds(270, 220, 170, 140);
+        pic1.setBounds(270, 240, 170, 140);
 
-        Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
-        getContentPane().add(Background1);
-        Background1.setBounds(0, -10, 1090, 730);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/drink1.jpg"))); // NOI18N
+        getContentPane().add(Background);
+        Background.setBounds(0, 0, 1080, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,26 +173,26 @@ public class Maindish extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Maindish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Drink.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Maindish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Drink.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Maindish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Drink.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Maindish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Drink.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Maindish().setVisible(true);
+                new Drink().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Background1;
+    private javax.swing.JLabel Background;
     private javax.swing.JButton Dessert;
     private javax.swing.JButton Drink;
     private javax.swing.JButton Homepage;
