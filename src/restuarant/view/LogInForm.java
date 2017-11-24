@@ -8,24 +8,28 @@ package restuarant.view;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.sql.Connection;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
+import restuarant.controller.ConnectionBuilder;
+import restuarant.controller.Login;
 
 /**
  *
  * @author ASUS
  */
 public class LogInForm extends javax.swing.JFrame {
-
+    static Connection con = ConnectionBuilder.getConnection();
+    private String Username,password;
     public LogInForm() {
-    initComponents();
-   
+        initComponents();
 
-}
+    }
+
     /**
      * Creates new form LogInForm
      */
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,9 +41,9 @@ public class LogInForm extends javax.swing.JFrame {
     private void initComponents() {
 
         Lusername = new javax.swing.JLabel();
-        TFusername = new javax.swing.JTextField();
+        Username1 = new javax.swing.JTextField();
         Lpassword = new javax.swing.JLabel();
-        TFpassword = new javax.swing.JPasswordField();
+        Password1 = new javax.swing.JPasswordField();
         Blogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,24 +62,35 @@ public class LogInForm extends javax.swing.JFrame {
         getContentPane().add(Lusername);
         Lusername.setBounds(220, 490, 130, 40);
 
-        TFusername.addActionListener(new java.awt.event.ActionListener() {
+        Username1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TFusernameActionPerformed(evt);
+                Username1ActionPerformed(evt);
             }
         });
-        getContentPane().add(TFusername);
-        TFusername.setBounds(350, 500, 280, 30);
+        getContentPane().add(Username1);
+        Username1.setBounds(350, 500, 280, 30);
 
         Lpassword.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         Lpassword.setForeground(new java.awt.Color(255, 255, 255));
         Lpassword.setText("Password :");
         getContentPane().add(Lpassword);
         Lpassword.setBounds(220, 560, 130, 40);
-        getContentPane().add(TFpassword);
-        TFpassword.setBounds(350, 570, 280, 30);
+
+        Password1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Password1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Password1);
+        Password1.setBounds(350, 570, 280, 30);
 
         Blogin.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Blogin.setText("Log in");
+        Blogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloginActionPerformed(evt);
+            }
+        });
         getContentPane().add(Blogin);
         Blogin.setBounds(440, 620, 100, 30);
 
@@ -103,9 +118,25 @@ public class LogInForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TFusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFusernameActionPerformed
+    private void Username1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TFusernameActionPerformed
+    }//GEN-LAST:event_Username1ActionPerformed
+
+    private void Password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Password1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Password1ActionPerformed
+
+    private void BloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloginActionPerformed
+        Username = Username1.getText();
+        password = Password1.getText();
+        
+        Login log = new Login();
+        if(log.LoginRestuarant(Username, password) == true){
+        }  else {
+            JOptionPane frame = new JOptionPane();
+            JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,21 +168,11 @@ public class LogInForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                LogInForm myFrame = new LogInForm ( );
+                LogInForm myFrame = new LogInForm();
 
                 myFrame.setExtendedState(MAXIMIZED_BOTH);
 
-         
-
-     
-
-         
-
-        myFrame.setDefaultCloseOperation ( WindowConstants.EXIT_ON_CLOSE );
-
-         
-
-    
+                myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
                 new LogInForm().setVisible(true);
             }
@@ -162,8 +183,8 @@ public class LogInForm extends javax.swing.JFrame {
     private javax.swing.JButton Blogin;
     private javax.swing.JLabel Lpassword;
     private javax.swing.JLabel Lusername;
-    private javax.swing.JPasswordField TFpassword;
-    private javax.swing.JTextField TFusername;
+    private javax.swing.JPasswordField Password1;
+    private javax.swing.JTextField Username1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
