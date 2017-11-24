@@ -27,30 +27,140 @@ public class Desserts extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Homepage = new javax.swing.JButton();
+        Mandish = new javax.swing.JButton();
+        Dessert = new javax.swing.JButton();
+        SignOut = new javax.swing.JButton();
+        Drink = new javax.swing.JButton();
+        pic1 = new javax.swing.JPanel();
+        pic2 = new javax.swing.JPanel();
+        pic3 = new javax.swing.JPanel();
+        pic4 = new javax.swing.JPanel();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1080, 720));
         setSize(new java.awt.Dimension(1080, 720));
+        getContentPane().setLayout(null);
+
+        Homepage.setBackground(new java.awt.Color(0, 204, 255));
+        Homepage.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Homepage.setForeground(new java.awt.Color(255, 255, 0));
+        Homepage.setText("Homepage");
+        getContentPane().add(Homepage);
+        Homepage.setBounds(220, 110, 120, 40);
+
+        Mandish.setBackground(new java.awt.Color(0, 204, 255));
+        Mandish.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Mandish.setForeground(new java.awt.Color(255, 255, 0));
+        Mandish.setText("Maindish");
+        getContentPane().add(Mandish);
+        Mandish.setBounds(340, 110, 130, 40);
+
+        Dessert.setBackground(new java.awt.Color(0, 204, 255));
+        Dessert.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Dessert.setForeground(new java.awt.Color(255, 255, 0));
+        Dessert.setText("Dessert");
+        getContentPane().add(Dessert);
+        Dessert.setBounds(470, 110, 130, 40);
+
+        SignOut.setBackground(new java.awt.Color(0, 204, 255));
+        SignOut.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 0));
+        SignOut.setText("Sign-Out");
+        getContentPane().add(SignOut);
+        SignOut.setBounds(730, 110, 130, 40);
+
+        Drink.setBackground(new java.awt.Color(0, 204, 255));
+        Drink.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Drink.setForeground(new java.awt.Color(255, 255, 0));
+        Drink.setText("Drinks");
+        Drink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DrinkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Drink);
+        Drink.setBounds(600, 110, 130, 40);
+
+        pic1.setBackground(new java.awt.Color(255, 255, 255));
+        pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+
+        javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
+        pic1.setLayout(pic1Layout);
+        pic1Layout.setHorizontalGroup(
+            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+        pic1Layout.setVerticalGroup(
+            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic1);
+        pic1.setBounds(270, 220, 170, 140);
+
+        pic2.setBackground(new java.awt.Color(255, 255, 255));
+        pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+
+        javax.swing.GroupLayout pic2Layout = new javax.swing.GroupLayout(pic2);
+        pic2.setLayout(pic2Layout);
+        pic2Layout.setHorizontalGroup(
+            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+        pic2Layout.setVerticalGroup(
+            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic2);
+        pic2.setBounds(590, 220, 170, 140);
+
+        pic3.setBackground(new java.awt.Color(255, 255, 255));
+        pic3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+
+        javax.swing.GroupLayout pic3Layout = new javax.swing.GroupLayout(pic3);
+        pic3.setLayout(pic3Layout);
+        pic3Layout.setHorizontalGroup(
+            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+        pic3Layout.setVerticalGroup(
+            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic3);
+        pic3.setBounds(270, 450, 170, 140);
+
+        pic4.setBackground(new java.awt.Color(255, 255, 255));
+        pic4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+
+        javax.swing.GroupLayout pic4Layout = new javax.swing.GroupLayout(pic4);
+        pic4.setLayout(pic4Layout);
+        pic4Layout.setHorizontalGroup(
+            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+        pic4Layout.setVerticalGroup(
+            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic4);
+        pic4.setBounds(600, 450, 170, 140);
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(833, 833, 833))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(BG);
+        BG.setBounds(0, -80, 1080, 830);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DrinkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,5 +199,14 @@ public class Desserts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BG;
+    private javax.swing.JButton Dessert;
+    private javax.swing.JButton Drink;
+    private javax.swing.JButton Homepage;
+    private javax.swing.JButton Mandish;
+    private javax.swing.JButton SignOut;
+    private javax.swing.JPanel pic1;
+    private javax.swing.JPanel pic2;
+    private javax.swing.JPanel pic3;
+    private javax.swing.JPanel pic4;
     // End of variables declaration//GEN-END:variables
 }
