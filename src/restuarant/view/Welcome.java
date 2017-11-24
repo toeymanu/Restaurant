@@ -47,7 +47,7 @@ public class Welcome extends javax.swing.JFrame {
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang");
         getContentPane().add(Welcome);
-        Welcome.setBounds(310, 30, 640, 150);
+        Welcome.setBounds(160, 30, 850, 150);
 
         Mainpage.setBackground(new java.awt.Color(255, 51, 51));
         Mainpage.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
@@ -99,7 +99,7 @@ public class Welcome extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\workWel.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/workWel.jpg"))); // NOI18N
         getContentPane().add(background);
         background.setBounds(0, -210, 1220, 1170);
 
