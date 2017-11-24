@@ -10,13 +10,17 @@ import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Rectangle;
 import javax.swing.WindowConstants;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import restuarant.controller.ConnectionBuilder;
+import restuarant.controller.Function;
 /**
  *
  * @author ASUS
  */
 
 public class Register extends javax.swing.JFrame {
-
+static Connection con = ConnectionBuilder.getConnection();
+    private String username, password, firstname, lastname, tel, email, address;
     /**
      * Creates new form Register
      */
@@ -138,6 +142,11 @@ public class Register extends javax.swing.JFrame {
 
         OK.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         OK.setText("OK");
+        OK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OKActionPerformed(evt);
+            }
+        });
         getContentPane().add(OK);
         OK.setBounds(480, 650, 80, 40);
 
@@ -153,6 +162,23 @@ public class Register extends javax.swing.JFrame {
     private void UserIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UserIdActionPerformed
+
+    private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
+        username = UserName.getText();
+        password = Password.getText();
+        firstname = FirstName.getText();
+        lastname = LastName.getText();
+        tel = Tel.getText();
+        email = Email.getText();
+        address = Address.getText();
+        
+        Function regis = new Function();
+        regis.Register(username, password, firstname, lastname, tel, email, address);
+
+        LogInForm log = new LogInForm();
+        this.setVisible(false);
+        log.setVisible(true);
+    }//GEN-LAST:event_OKActionPerformed
 
     /**
      * @param args the command line arguments

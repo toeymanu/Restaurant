@@ -19,7 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import restuarant.controller.ConnectionBuilder;
-import restuarant.controller.Login;
+import restuarant.controller.Function;
 
 /**
  *
@@ -27,11 +27,17 @@ import restuarant.controller.Login;
  */
 public class LogInForm extends javax.swing.JFrame {
     static Connection con = ConnectionBuilder.getConnection();
+
+    public String UserID;
+    
+ 
     private String Username,password;
     public LogInForm() {
         initComponents();
 
     }
+  
+  
 
     /**
      * Creates new form LogInForm
@@ -133,63 +139,50 @@ public class LogInForm extends javax.swing.JFrame {
     }//GEN-LAST:event_Password1ActionPerformed
 
     private void BloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloginActionPerformed
-        Username = Username1.getText();
+       Username = Username1.getText();
         password = Password1.getText();
         String Role = null;
-        int Roleuser = 0;
-//            try {
-//                System.out.println("test");
-//                String sql = "Select * From User WHERE Username = ?";
-//                PreparedStatement pre = con.prepareStatement(sql);
-//                pre.setString(1, Username);
-//                
-//                ResultSet rs = pre.executeQuery();
-//                System.out.println("test");
-//                if(rs.next()){
-//                    Role = rs.getString("Role_RoleID");
-//                    System.out.println(Role);
-//                }
-//                
-//                
-//            } catch (SQLException ex) {
-//                Logger.getLogger(LogInForm.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-        Login log = new Login();
+        Function log = new Function();
         if(log.LoginRestuarant(Username, password) == true){
             try {
-                System.out.println("test");
+                //System.out.println("test");
                 String sql = "Select * From User WHERE Username = ?";
                 PreparedStatement pre = con.prepareStatement(sql);
                 pre.setString(1, Username);
                 
                 ResultSet rs = pre.executeQuery();
-                System.out.println("test");
                 if(rs.next()){
                     Role = rs.getString("Role_RoleID");
-                    System.out.println(Role);
+                    //System.out.println(Role);
+             
+                }else{
+                    //System.out.println("fail");
                 }
                 
                 
             } catch (SQLException ex) {
                 Logger.getLogger(LogInForm.class.getName()).log(Level.SEVERE, null, ex);
             }
-           if(Role.equals(Roleuser)){
-               System.out.println("123");
+           int Roleuser = Integer.parseInt(Role);
+           if(Roleuser == 0){
+               UserID = Username;
+               //System.out.println("123");
                Welcome user = new Welcome();
                this.setVisible(false);
               user.setVisible(true);
            }else{
-               System.out.println("5555");
+               //System.out.println("5555");
                WelcomeAdmin admin = new WelcomeAdmin();
                this.setVisible(false);
                admin.setVisible(true);
            }
-            
         }
+          
             else {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
         }
+        System.out.println(UserID);
     }//GEN-LAST:event_BloginActionPerformed
 
     /**
