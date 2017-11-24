@@ -12,12 +12,12 @@ package restuarant.view;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Toolkit;
 import javax.swing.WindowConstants;
-public class Welcome extends javax.swing.JFrame {
+public class WelcomeAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form Welcome
      */
-    public Welcome() {
+    public WelcomeAdmin() {
         initComponents();
     }
 
@@ -116,9 +116,7 @@ public class Welcome extends javax.swing.JFrame {
     }//GEN-LAST:event_FeedbackkActionPerformed
 
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        LogInForm login = new LogInForm();
-            this.setVisible(false);
-            login.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_LogInActionPerformed
 
     private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
@@ -142,24 +140,26 @@ public class Welcome extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               Welcome myFrame2 = new Welcome( );
+               WelcomeAdmin myFrame2 = new WelcomeAdmin( );
                 myFrame2.setExtendedState(MAXIMIZED_BOTH);
                 myFrame2.setDefaultCloseOperation ( WindowConstants.EXIT_ON_CLOSE );
-                new Welcome().setVisible(true);
+                new WelcomeAdmin().setVisible(true);
             }
         });
     }

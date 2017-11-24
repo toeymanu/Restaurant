@@ -9,6 +9,12 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
@@ -129,10 +135,58 @@ public class LogInForm extends javax.swing.JFrame {
     private void BloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloginActionPerformed
         Username = Username1.getText();
         password = Password1.getText();
-        
+        String Role = null;
+        int Roleuser = 0;
+//            try {
+//                System.out.println("test");
+//                String sql = "Select * From User WHERE Username = ?";
+//                PreparedStatement pre = con.prepareStatement(sql);
+//                pre.setString(1, Username);
+//                
+//                ResultSet rs = pre.executeQuery();
+//                System.out.println("test");
+//                if(rs.next()){
+//                    Role = rs.getString("Role_RoleID");
+//                    System.out.println(Role);
+//                }
+//                
+//                
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LogInForm.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         Login log = new Login();
         if(log.LoginRestuarant(Username, password) == true){
-        }  else {
+            try {
+                System.out.println("test");
+                String sql = "Select * From User WHERE Username = ?";
+                PreparedStatement pre = con.prepareStatement(sql);
+                pre.setString(1, Username);
+                
+                ResultSet rs = pre.executeQuery();
+                System.out.println("test");
+                if(rs.next()){
+                    Role = rs.getString("Role_RoleID");
+                    System.out.println(Role);
+                }
+                
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(LogInForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           if(Role.equals(Roleuser)){
+               System.out.println("123");
+               Welcome user = new Welcome();
+               this.setVisible(false);
+              user.setVisible(true);
+           }else{
+               System.out.println("5555");
+               WelcomeAdmin admin = new WelcomeAdmin();
+               this.setVisible(false);
+               admin.setVisible(true);
+           }
+            
+        }
+            else {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
         }
