@@ -118,9 +118,6 @@
           <Color blue="0" green="33" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\ASUS\Desktop\fast-food-restaurant-background-with-chalkboard-texture-free-94.jpg"/>
-        </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -143,7 +140,7 @@
           <Font name="Verdana" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\ASUS\Desktop\wlog.jpg"/>
+          <Image iconType="3" name="/GuiImg/wlog.jpg"/>
         </Property>
       </Properties>
       <Constraints>

@@ -89,14 +89,13 @@ public class LogInForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\fast-food-restaurant-background-with-chalkboard-texture-free-94.jpg")); // NOI18N
         jLabel1.setToolTipText("");
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-280, 0, 1580, 100);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\wlog.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/wlog.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(-20, 0, 1170, 740);
 
