@@ -21,7 +21,8 @@ public class ConnectionBuilder {
         String user = "toey";
         String pass = "toey";
 //        String user = "int203";
-//        String pass = "int203";
+//        String pass = "int203;";
+//nfiosdfiosdjfipasjdopsajdosajdpsajdasjdopasdjpoasdj
         String hostName = "db.int203.phornlert.me:3306";
         String driverName = "com.mysql.jdbc.Driver";
         try {
