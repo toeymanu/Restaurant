@@ -122,7 +122,9 @@ public class Welcome extends javax.swing.JFrame {
     }//GEN-LAST:event_LogInActionPerformed
 
     private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
-        // TODO add your handling code here:
+        Register regis = new Register();
+        this.setVisible(false);
+        regis.setVisible(true);
     }//GEN-LAST:event_RegisActionPerformed
 
     /**

@@ -5,6 +5,8 @@
  */
 package restuarant.view;
 
+import restuarant_model.PictureDB;
+
 /**
  *
  * @author ASUS
@@ -32,10 +34,14 @@ public class Drink extends javax.swing.JFrame {
         Dessert = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
+        pic1 = new javax.swing.JPanel();
         pic2 = new javax.swing.JPanel();
         pic3 = new javax.swing.JPanel();
         pic4 = new javax.swing.JPanel();
-        pic1 = new javax.swing.JPanel();
+        Namepic1 = new javax.swing.JLabel();
+        Namepic2 = new javax.swing.JLabel();
+        Namepic3 = new javax.swing.JLabel();
+        Namepic4 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,6 +83,23 @@ public class Drink extends javax.swing.JFrame {
         getContentPane().add(Drink);
         Drink.setBounds(350, 170, 120, 40);
 
+        pic1.setBackground(new java.awt.Color(255, 255, 255));
+        pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+
+        javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
+        pic1.setLayout(pic1Layout);
+        pic1Layout.setHorizontalGroup(
+            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+        pic1Layout.setVerticalGroup(
+            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic1);
+        pic1.setBounds(230, 230, 170, 140);
+
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
 
@@ -92,7 +115,7 @@ public class Drink extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic2);
-        pic2.setBounds(580, 240, 170, 140);
+        pic2.setBounds(660, 230, 170, 140);
 
         pic3.setBackground(new java.awt.Color(255, 255, 255));
         pic3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -109,7 +132,7 @@ public class Drink extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic3);
-        pic3.setBounds(270, 440, 170, 140);
+        pic3.setBounds(240, 460, 170, 140);
 
         pic4.setBackground(new java.awt.Color(255, 255, 255));
         pic4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -126,24 +149,24 @@ public class Drink extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic4);
-        pic4.setBounds(590, 440, 170, 140);
+        pic4.setBounds(660, 470, 170, 140);
 
-        pic1.setBackground(new java.awt.Color(255, 255, 255));
-        pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
+        Namepic1.setText("jLabel1");
+        getContentPane().add(Namepic1);
+        Namepic1.setBounds(240, 380, 45, 16);
+        Namepic1.setText(PictureDB.getMenu_Name(1));
 
-        javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
-        pic1.setLayout(pic1Layout);
-        pic1Layout.setHorizontalGroup(
-            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
-        );
-        pic1Layout.setVerticalGroup(
-            pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
-        );
+        Namepic2.setText("jLabel2");
+        getContentPane().add(Namepic2);
+        Namepic2.setBounds(670, 380, 45, 16);
 
-        getContentPane().add(pic1);
-        pic1.setBounds(270, 240, 170, 140);
+        Namepic3.setText("jLabel3");
+        getContentPane().add(Namepic3);
+        Namepic3.setBounds(660, 630, 45, 16);
+
+        Namepic4.setText("jLabel4");
+        getContentPane().add(Namepic4);
+        Namepic4.setBounds(240, 620, 45, 16);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/drink1.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -197,6 +220,10 @@ public class Drink extends javax.swing.JFrame {
     private javax.swing.JButton Drink;
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
+    private javax.swing.JLabel Namepic1;
+    private javax.swing.JLabel Namepic2;
+    private javax.swing.JLabel Namepic3;
+    private javax.swing.JLabel Namepic4;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel pic1;
     private javax.swing.JPanel pic2;
