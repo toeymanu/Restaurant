@@ -78,7 +78,6 @@ public class Maindish extends javax.swing.JFrame {
 
         Homepage.setBackground(new java.awt.Color(153, 153, 153));
         Homepage.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Homepage.setForeground(new java.awt.Color(255, 255, 255));
         Homepage.setText("Homepage");
         Homepage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +89,6 @@ public class Maindish extends javax.swing.JFrame {
 
         Mandish.setBackground(new java.awt.Color(153, 153, 153));
         Mandish.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Mandish.setForeground(new java.awt.Color(255, 255, 255));
         Mandish.setText("Maindish");
         Mandish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +100,6 @@ public class Maindish extends javax.swing.JFrame {
 
         Dessert.setBackground(new java.awt.Color(153, 153, 153));
         Dessert.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Dessert.setForeground(new java.awt.Color(255, 255, 255));
         Dessert.setText("Dessert");
         Dessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +111,6 @@ public class Maindish extends javax.swing.JFrame {
 
         SignOut.setBackground(new java.awt.Color(153, 153, 153));
         SignOut.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setText("Sign-Out");
         SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +122,6 @@ public class Maindish extends javax.swing.JFrame {
 
         Drink.setBackground(new java.awt.Color(153, 153, 153));
         Drink.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        Drink.setForeground(new java.awt.Color(255, 255, 255));
         Drink.setText("Drinks");
         Drink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +152,8 @@ public class Maindish extends javax.swing.JFrame {
         getContentPane().add(pic1);
         pic1.setBounds(70, 230, 380, 330);
 
+        Menuall.setBorder(new javax.swing.border.MatteBorder(null));
+        Menuall.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Menuall.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -175,24 +172,25 @@ public class Maindish extends javax.swing.JFrame {
         jScrollPane2.setViewportView(Menuall);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(610, 230, 380, 300);
+        jScrollPane2.setBounds(560, 230, 380, 300);
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 170, 330, 50);
+        jLabel2.setBounds(100, 170, 330, 50);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 570, 330, 140);
+        jScrollPane1.setBounds(70, 570, 500, 120);
 
         Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
         getContentPane().add(Background1);
         Background1.setBounds(0, -10, 1090, 730);
 
-        pack();
+        setBounds(0, 0, 1098, 767);
     }// </editor-fold>//GEN-END:initComponents
 
     private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
