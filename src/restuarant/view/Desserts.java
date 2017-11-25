@@ -32,22 +32,11 @@ public class Desserts extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1080, 720));
         setSize(new java.awt.Dimension(1080, 720));
+        getContentPane().setLayout(null);
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(833, 833, 833))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(BG);
+        BG.setBounds(0, 0, 1080, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

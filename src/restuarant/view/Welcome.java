@@ -35,6 +35,10 @@ public class Welcome extends javax.swing.JFrame {
         Feedbackk = new javax.swing.JButton();
         LogIn = new javax.swing.JButton();
         Regis = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Drink = new javax.swing.JButton();
+        Desserts = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +63,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Mainpage);
-        Mainpage.setBounds(680, 250, 100, 20);
+        Mainpage.setBounds(220, 240, 100, 20);
 
         Feedbackk.setBackground(new java.awt.Color(255, 51, 51));
         Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -71,7 +75,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(790, 250, 110, 20);
+        Feedbackk.setBounds(390, 240, 110, 20);
 
         LogIn.setBackground(new java.awt.Color(255, 51, 51));
         LogIn.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -96,6 +100,30 @@ public class Welcome extends javax.swing.JFrame {
         });
         getContentPane().add(Regis);
         Regis.setBounds(750, 200, 100, 20);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 51)));
+
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(160, 370, 320, 290);
+
+        Drink.setBackground(new java.awt.Color(255, 51, 51));
+        Drink.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
+        Drink.setText("Drink");
+        getContentPane().add(Drink);
+        Drink.setBounds(570, 240, 97, 29);
+
+        Desserts.setBackground(new java.awt.Color(255, 51, 51));
+        Desserts.setText("Desserts");
+        Desserts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DessertsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Desserts);
+        Desserts.setBounds(720, 240, 99, 29);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -124,6 +152,10 @@ public class Welcome extends javax.swing.JFrame {
     private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegisActionPerformed
+
+    private void DessertsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DessertsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,11 +197,15 @@ public class Welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Desserts;
+    private javax.swing.JButton Drink;
     private javax.swing.JButton Feedbackk;
     private javax.swing.JButton LogIn;
     private javax.swing.JButton Mainpage;
     private javax.swing.JButton Regis;
     private javax.swing.JLabel Welcome;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
