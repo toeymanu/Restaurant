@@ -41,12 +41,9 @@ static Connection con = ConnectionBuilder.getConnection();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        Regis = new javax.swing.JLabel();
-        UserId = new javax.swing.JTextField();
         UserName = new javax.swing.JTextField();
         Password = new javax.swing.JTextField();
         FirstName = new javax.swing.JTextField();
@@ -65,82 +62,63 @@ static Connection con = ConnectionBuilder.getConnection();
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(153, 51, 0));
         jLabel2.setText("UserName :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(270, 250, 120, 30);
+        jLabel2.setBounds(340, 190, 120, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(153, 51, 0));
         jLabel3.setText("Password :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(280, 300, 110, 30);
+        jLabel3.setBounds(340, 240, 110, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(153, 51, 0));
         jLabel4.setText("FirstName :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(280, 350, 120, 30);
+        jLabel4.setBounds(340, 290, 120, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(153, 51, 0));
         jLabel5.setText("Tel :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(340, 450, 120, 30);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("UserID :");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(300, 200, 90, 30);
+        jLabel5.setBounds(400, 380, 120, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(153, 51, 0));
         jLabel7.setText("Email :");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(320, 500, 120, 30);
+        jLabel7.setBounds(380, 430, 120, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(153, 51, 0));
         jLabel8.setText("Address :");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(300, 540, 120, 30);
+        jLabel8.setBounds(360, 480, 120, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(153, 51, 0));
         jLabel9.setText("LastName :");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(280, 400, 120, 30);
-
-        Regis.setFont(new java.awt.Font("Verdana", 3, 70)); // NOI18N
-        Regis.setForeground(new java.awt.Color(255, 0, 51));
-        Regis.setText("Register");
-        getContentPane().add(Regis);
-        Regis.setBounds(340, 70, 440, 86);
-
-        UserId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserIdActionPerformed(evt);
-            }
-        });
-        getContentPane().add(UserId);
-        UserId.setBounds(400, 200, 260, 30);
+        jLabel9.setBounds(340, 340, 120, 30);
         getContentPane().add(UserName);
-        UserName.setBounds(400, 250, 260, 30);
+        UserName.setBounds(490, 190, 260, 30);
         getContentPane().add(Password);
-        Password.setBounds(400, 300, 260, 30);
+        Password.setBounds(490, 240, 260, 30);
         getContentPane().add(FirstName);
-        FirstName.setBounds(400, 350, 260, 30);
+        FirstName.setBounds(490, 290, 260, 30);
         getContentPane().add(LastName);
-        LastName.setBounds(400, 400, 260, 30);
+        LastName.setBounds(490, 340, 260, 30);
         getContentPane().add(Tel);
-        Tel.setBounds(400, 450, 260, 30);
+        Tel.setBounds(490, 380, 260, 30);
         getContentPane().add(Email);
-        Email.setBounds(400, 500, 260, 30);
+        Email.setBounds(490, 430, 260, 30);
         getContentPane().add(Address);
-        Address.setBounds(400, 550, 260, 80);
+        Address.setBounds(490, 480, 260, 80);
 
         OK.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        OK.setForeground(new java.awt.Color(153, 51, 0));
         OK.setText("OK");
         OK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,20 +126,16 @@ static Connection con = ConnectionBuilder.getConnection();
             }
         });
         getContentPane().add(OK);
-        OK.setBounds(480, 650, 80, 40);
+        OK.setBounds(510, 600, 80, 40);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/Chinese.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/regis.jpg"))); // NOI18N
         Background.setMaximumSize(new java.awt.Dimension(600, 600));
         Background.setMinimumSize(new java.awt.Dimension(600, 600));
         getContentPane().add(Background);
-        Background.setBounds(-110, -300, 1220, 1080);
+        Background.setBounds(0, -170, 1220, 1080);
 
         setBounds(0, 0, 1096, 797);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void UserIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UserIdActionPerformed
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
         username = UserName.getText();
@@ -231,15 +205,12 @@ static Connection con = ConnectionBuilder.getConnection();
     private javax.swing.JTextField LastName;
     private javax.swing.JButton OK;
     private javax.swing.JTextField Password;
-    private javax.swing.JLabel Regis;
     private javax.swing.JTextField Tel;
-    private javax.swing.JTextField UserId;
     private javax.swing.JTextField UserName;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
