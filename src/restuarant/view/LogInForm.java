@@ -57,7 +57,6 @@ public class LogInForm extends javax.swing.JFrame {
         Lpassword = new javax.swing.JLabel();
         Password1 = new javax.swing.JPasswordField();
         Blogin = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -68,11 +67,11 @@ public class LogInForm extends javax.swing.JFrame {
         );
         getContentPane().setLayout(null);
 
-        Lusername.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        Lusername.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
         Lusername.setForeground(new java.awt.Color(255, 255, 255));
         Lusername.setText("Username :");
         getContentPane().add(Lusername);
-        Lusername.setBounds(220, 490, 130, 40);
+        Lusername.setBounds(260, 330, 130, 40);
 
         Username1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,13 +79,13 @@ public class LogInForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Username1);
-        Username1.setBounds(350, 500, 280, 30);
+        Username1.setBounds(430, 340, 280, 30);
 
-        Lpassword.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        Lpassword.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
         Lpassword.setForeground(new java.awt.Color(255, 255, 255));
         Lpassword.setText("Password :");
         getContentPane().add(Lpassword);
-        Lpassword.setBounds(220, 560, 130, 40);
+        Lpassword.setBounds(260, 400, 130, 40);
 
         Password1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +93,7 @@ public class LogInForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Password1);
-        Password1.setBounds(350, 570, 280, 30);
+        Password1.setBounds(430, 410, 280, 30);
 
         Blogin.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         Blogin.setText("Log in");
@@ -104,14 +103,7 @@ public class LogInForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Blogin);
-        Blogin.setBounds(440, 620, 100, 30);
-
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(236, 0, 86));
-        jLabel4.setText("Log-in");
-        jLabel4.setToolTipText("");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(420, 30, 170, 50);
+        Blogin.setBounds(450, 510, 100, 30);
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 0));
@@ -122,9 +114,9 @@ public class LogInForm extends javax.swing.JFrame {
         jLabel1.setBounds(-280, 0, 1580, 100);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/wlog.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/login.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(-20, 0, 1170, 740);
+        jLabel3.setBounds(0, 0, 1170, 740);
 
         setSize(new java.awt.Dimension(1096, 759));
         setLocationRelativeTo(null);
@@ -234,6 +226,5 @@ public class LogInForm extends javax.swing.JFrame {
     private javax.swing.JTextField Username1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
