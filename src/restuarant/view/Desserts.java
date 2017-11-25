@@ -32,7 +32,10 @@ public class Desserts extends javax.swing.JFrame {
         Dessert = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        description = new javax.swing.JTextArea();
         pic2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +83,15 @@ public class Desserts extends javax.swing.JFrame {
         getContentPane().add(Drink);
         Drink.setBounds(600, 140, 130, 40);
 
+        description.setColumns(20);
+        description.setLineWrap(true);
+        description.setRows(5);
+        description.setEnabled(false);
+        jScrollPane1.setViewportView(description);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(430, 260, 540, 170);
+
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
 
@@ -87,19 +99,28 @@ public class Desserts extends javax.swing.JFrame {
         pic2.setLayout(pic2Layout);
         pic2Layout.setHorizontalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addGap(0, 312, Short.MAX_VALUE)
         );
         pic2Layout.setVerticalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addGap(0, 242, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic2);
-        pic2.setBounds(330, 230, 500, 290);
+        pic2.setBounds(80, 260, 320, 250);
+
+        jTextField1.setText("Name");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(130, 220, 69, 22);
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
         getContentPane().add(BG);
-        BG.setBounds(0, 0, 1080, 720);
+        BG.setBounds(0, 10, 1080, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,6 +128,10 @@ public class Desserts extends javax.swing.JFrame {
     private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DrinkActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +175,9 @@ public class Desserts extends javax.swing.JFrame {
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
     private javax.swing.JButton SignOut;
+    private javax.swing.JTextArea description;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pic2;
     // End of variables declaration//GEN-END:variables
 }

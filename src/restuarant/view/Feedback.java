@@ -37,26 +37,27 @@ public class Feedback extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Let you Feedback");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("spoon-and-fork-crossed_318-33017.jpg")));
+        setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
         jLabel2.setText("Please Give Feed Back");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(340, 210, 640, 90);
+        jLabel2.setBounds(250, 140, 640, 90);
         getContentPane().add(FBBar);
-        FBBar.setBounds(370, 390, 520, 360);
+        FBBar.setBounds(300, 280, 520, 360);
 
         Submit.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         Submit.setText("Submit");
         getContentPane().add(Submit);
-        Submit.setBounds(920, 460, 140, 50);
+        Submit.setBounds(470, 660, 140, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\fb57.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/feedback.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1080, 720));
         jLabel1.setMinimumSize(new java.awt.Dimension(1080, 720));
         jLabel1.setPreferredSize(new java.awt.Dimension(1080, 720));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -30, 1220, 1080);
+        jLabel1.setBounds(10, -180, 1220, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
