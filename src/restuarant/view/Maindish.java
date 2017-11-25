@@ -32,9 +32,6 @@ public class Maindish extends javax.swing.JFrame {
         Dessert = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
-        pic2 = new javax.swing.JPanel();
-        pic3 = new javax.swing.JPanel();
-        pic4 = new javax.swing.JPanel();
         pic1 = new javax.swing.JPanel();
         Background1 = new javax.swing.JLabel();
 
@@ -82,57 +79,6 @@ public class Maindish extends javax.swing.JFrame {
         getContentPane().add(Drink);
         Drink.setBounds(600, 120, 130, 30);
 
-        pic2.setBackground(new java.awt.Color(255, 255, 255));
-        pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic2Layout = new javax.swing.GroupLayout(pic2);
-        pic2.setLayout(pic2Layout);
-        pic2Layout.setHorizontalGroup(
-            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
-        );
-        pic2Layout.setVerticalGroup(
-            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic2);
-        pic2.setBounds(590, 220, 170, 140);
-
-        pic3.setBackground(new java.awt.Color(255, 255, 255));
-        pic3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic3Layout = new javax.swing.GroupLayout(pic3);
-        pic3.setLayout(pic3Layout);
-        pic3Layout.setHorizontalGroup(
-            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
-        );
-        pic3Layout.setVerticalGroup(
-            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic3);
-        pic3.setBounds(270, 450, 170, 140);
-
-        pic4.setBackground(new java.awt.Color(255, 255, 255));
-        pic4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic4Layout = new javax.swing.GroupLayout(pic4);
-        pic4.setLayout(pic4Layout);
-        pic4Layout.setHorizontalGroup(
-            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
-        );
-        pic4Layout.setVerticalGroup(
-            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic4);
-        pic4.setBounds(600, 450, 170, 140);
-
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
 
@@ -140,15 +86,15 @@ public class Maindish extends javax.swing.JFrame {
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addGap(0, 502, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addGap(0, 292, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic1);
-        pic1.setBounds(270, 220, 170, 140);
+        pic1.setBounds(300, 220, 510, 300);
 
         Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
         getContentPane().add(Background1);
@@ -204,8 +150,5 @@ public class Maindish extends javax.swing.JFrame {
     private javax.swing.JButton Mandish;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel pic1;
-    private javax.swing.JPanel pic2;
-    private javax.swing.JPanel pic3;
-    private javax.swing.JPanel pic4;
     // End of variables declaration//GEN-END:variables
 }

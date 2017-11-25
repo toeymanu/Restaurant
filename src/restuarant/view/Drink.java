@@ -35,17 +35,7 @@ public class Drink extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
-        pic1label = new javax.swing.JLabel();
-        pic2 = new javax.swing.JPanel();
-        pic2label = new javax.swing.JLabel();
-        pic3 = new javax.swing.JPanel();
-        pic3label = new javax.swing.JLabel();
-        pic4 = new javax.swing.JPanel();
-        pic4label = new javax.swing.JLabel();
         Namepic1 = new javax.swing.JLabel();
-        Namepic2 = new javax.swing.JLabel();
-        Namepic3 = new javax.swing.JLabel();
-        Namepic4 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,83 +94,20 @@ public class Drink extends javax.swing.JFrame {
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic1label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+            .addGap(0, 412, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic1label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+            .addGap(0, 272, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic1);
-        pic1.setBounds(230, 230, 170, 140);
-
-        pic2.setBackground(new java.awt.Color(255, 255, 255));
-        pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic2Layout = new javax.swing.GroupLayout(pic2);
-        pic2.setLayout(pic2Layout);
-        pic2Layout.setHorizontalGroup(
-            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-        );
-        pic2Layout.setVerticalGroup(
-            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic2);
-        pic2.setBounds(660, 230, 170, 140);
-
-        pic3.setBackground(new java.awt.Color(255, 255, 255));
-        pic3.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic3Layout = new javax.swing.GroupLayout(pic3);
-        pic3.setLayout(pic3Layout);
-        pic3Layout.setHorizontalGroup(
-            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-        );
-        pic3Layout.setVerticalGroup(
-            pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic3);
-        pic3.setBounds(240, 460, 170, 140);
-
-        pic4.setBackground(new java.awt.Color(255, 255, 255));
-        pic4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
-
-        javax.swing.GroupLayout pic4Layout = new javax.swing.GroupLayout(pic4);
-        pic4.setLayout(pic4Layout);
-        pic4Layout.setHorizontalGroup(
-            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-        );
-        pic4Layout.setVerticalGroup(
-            pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pic4);
-        pic4.setBounds(660, 470, 170, 140);
+        pic1.setBounds(350, 270, 420, 280);
 
         Namepic1.setText("jLabel1");
         getContentPane().add(Namepic1);
-        Namepic1.setBounds(240, 380, 45, 16);
+        Namepic1.setBounds(270, 380, 41, 16);
         Namepic1.setText(PictureDB.getMenu_Name(1));
-
-        Namepic2.setText("jLabel2");
-        getContentPane().add(Namepic2);
-        Namepic2.setBounds(670, 380, 45, 16);
-
-        Namepic3.setText("jLabel3");
-        getContentPane().add(Namepic3);
-        Namepic3.setBounds(660, 630, 45, 16);
-
-        Namepic4.setText("jLabel4");
-        getContentPane().add(Namepic4);
-        Namepic4.setBounds(240, 620, 45, 16);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/drink1.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -247,17 +174,7 @@ public class Drink extends javax.swing.JFrame {
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
     private javax.swing.JLabel Namepic1;
-    private javax.swing.JLabel Namepic2;
-    private javax.swing.JLabel Namepic3;
-    private javax.swing.JLabel Namepic4;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel pic1;
-    private javax.swing.JLabel pic1label;
-    private javax.swing.JPanel pic2;
-    private javax.swing.JLabel pic2label;
-    private javax.swing.JPanel pic3;
-    private javax.swing.JLabel pic3label;
-    private javax.swing.JPanel pic4;
-    private javax.swing.JLabel pic4label;
     // End of variables declaration//GEN-END:variables
 }

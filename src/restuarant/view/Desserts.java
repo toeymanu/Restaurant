@@ -27,6 +27,12 @@ public class Desserts extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Homepage = new javax.swing.JButton();
+        Mandish = new javax.swing.JButton();
+        Dessert = new javax.swing.JButton();
+        SignOut = new javax.swing.JButton();
+        Drink = new javax.swing.JButton();
+        pic2 = new javax.swing.JPanel();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,12 +40,73 @@ public class Desserts extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
+        Homepage.setBackground(new java.awt.Color(0, 204, 204));
+        Homepage.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Homepage.setForeground(new java.awt.Color(255, 255, 255));
+        Homepage.setText("Homepage");
+        getContentPane().add(Homepage);
+        Homepage.setBounds(220, 140, 120, 40);
+
+        Mandish.setBackground(new java.awt.Color(0, 204, 204));
+        Mandish.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Mandish.setForeground(new java.awt.Color(255, 255, 255));
+        Mandish.setText("Maindish");
+        getContentPane().add(Mandish);
+        Mandish.setBounds(340, 140, 130, 40);
+
+        Dessert.setBackground(new java.awt.Color(0, 204, 204));
+        Dessert.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Dessert.setForeground(new java.awt.Color(255, 255, 255));
+        Dessert.setText("Dessert");
+        getContentPane().add(Dessert);
+        Dessert.setBounds(470, 140, 130, 40);
+
+        SignOut.setBackground(new java.awt.Color(0, 204, 204));
+        SignOut.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setText("Sign-Out");
+        getContentPane().add(SignOut);
+        SignOut.setBounds(730, 140, 130, 40);
+
+        Drink.setBackground(new java.awt.Color(0, 204, 204));
+        Drink.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        Drink.setForeground(new java.awt.Color(255, 255, 255));
+        Drink.setText("Drinks");
+        Drink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DrinkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Drink);
+        Drink.setBounds(600, 140, 130, 40);
+
+        pic2.setBackground(new java.awt.Color(255, 255, 255));
+        pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
+
+        javax.swing.GroupLayout pic2Layout = new javax.swing.GroupLayout(pic2);
+        pic2.setLayout(pic2Layout);
+        pic2Layout.setHorizontalGroup(
+            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 492, Short.MAX_VALUE)
+        );
+        pic2Layout.setVerticalGroup(
+            pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 282, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pic2);
+        pic2.setBounds(330, 230, 500, 290);
+
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
         getContentPane().add(BG);
         BG.setBounds(0, 0, 1080, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DrinkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +145,11 @@ public class Desserts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BG;
+    private javax.swing.JButton Dessert;
+    private javax.swing.JButton Drink;
+    private javax.swing.JButton Homepage;
+    private javax.swing.JButton Mandish;
+    private javax.swing.JButton SignOut;
+    private javax.swing.JPanel pic2;
     // End of variables declaration//GEN-END:variables
 }
