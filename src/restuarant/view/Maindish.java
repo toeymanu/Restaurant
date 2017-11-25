@@ -5,17 +5,47 @@
  */
 package restuarant.view;
 
+import java.util.ArrayList;
+import restuarant.controller.Function;
+
 /**
  *
  * @author ASUS
  */
 public class Maindish extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Maindish
      */
-    public Maindish() {
+    private String username = null;
+
+   
+
+    public Maindish(String user) {
         initComponents();
+        username = user;
+    }
+    public Maindish() {
+     initComponents();
+     setLocationRelativeTo(null);
+     
+     
+        Menuall.setModel(new javax.swing.AbstractListModel<String>() {
+            ArrayList<String> strings = Function.getAllMaindish();
+
+            @Override
+            public int getSize() {
+                return strings.size();
+            }
+
+            @Override
+            public String getElementAt(int i) {
+                return strings.get(i);
+            }
+        });
+
+     
+     
     }
 
     /**
@@ -33,9 +63,16 @@ public class Maindish extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Menuall = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         Background1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 720));
         setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
@@ -43,6 +80,11 @@ public class Maindish extends javax.swing.JFrame {
         Homepage.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         Homepage.setForeground(new java.awt.Color(255, 255, 255));
         Homepage.setText("Homepage");
+        Homepage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomepageActionPerformed(evt);
+            }
+        });
         getContentPane().add(Homepage);
         Homepage.setBounds(220, 120, 120, 30);
 
@@ -50,6 +92,11 @@ public class Maindish extends javax.swing.JFrame {
         Mandish.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         Mandish.setForeground(new java.awt.Color(255, 255, 255));
         Mandish.setText("Maindish");
+        Mandish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MandishActionPerformed(evt);
+            }
+        });
         getContentPane().add(Mandish);
         Mandish.setBounds(340, 120, 130, 30);
 
@@ -57,6 +104,11 @@ public class Maindish extends javax.swing.JFrame {
         Dessert.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         Dessert.setForeground(new java.awt.Color(255, 255, 255));
         Dessert.setText("Dessert");
+        Dessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DessertActionPerformed(evt);
+            }
+        });
         getContentPane().add(Dessert);
         Dessert.setBounds(470, 120, 130, 30);
 
@@ -64,6 +116,11 @@ public class Maindish extends javax.swing.JFrame {
         SignOut.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setText("Sign-Out");
+        SignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignOutActionPerformed(evt);
+            }
+        });
         getContentPane().add(SignOut);
         SignOut.setBounds(730, 120, 130, 30);
 
@@ -82,19 +139,54 @@ public class Maindish extends javax.swing.JFrame {
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
 
+        jLabel1.setText("2");
+
         javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 292, Short.MAX_VALUE)
+            .addGroup(pic1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(pic1);
-        pic1.setBounds(300, 220, 510, 300);
+        pic1.setBounds(70, 230, 380, 330);
+
+        Menuall.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Menuall.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuallMouseClicked(evt);
+            }
+        });
+        Menuall.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                MenuallValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(Menuall);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(610, 230, 380, 300);
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(70, 170, 330, 50);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(70, 570, 330, 140);
 
         Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
         getContentPane().add(Background1);
@@ -104,8 +196,48 @@ public class Maindish extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
-        // TODO add your handling code here:
+        Drink d = new Drink();
+        this.setVisible(false);
+        d.setVisible(true);
     }//GEN-LAST:event_DrinkActionPerformed
+
+    private void MenuallMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuallMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuallMouseClicked
+
+    private void MenuallValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_MenuallValueChanged
+        System.out.println(Menuall.getSelectedValue());
+        String menu[] = Function.getMenu(Menuall.getSelectedValue());
+            jLabel2.setText(menu[0]);
+            jTextArea1.setText(menu[2]);
+        
+    }//GEN-LAST:event_MenuallValueChanged
+
+    private void HomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomepageActionPerformed
+        Welcomeuser user = new Welcomeuser(username);
+        this.setVisible(false);
+        user.setVisible(true);
+    }//GEN-LAST:event_HomepageActionPerformed
+
+    private void MandishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MandishActionPerformed
+        Maindish md = new Maindish(username);
+        this.setVisible(false);
+        md.setVisible(true);
+    }//GEN-LAST:event_MandishActionPerformed
+
+    private void DessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertActionPerformed
+        Desserts ds = new Desserts(username);
+        this.setVisible(false);
+        ds.setVisible(true);
+    }//GEN-LAST:event_DessertActionPerformed
+
+    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
+         username = null;
+        
+        Welcome wel = new Welcome();
+        this.setVisible(false);
+        wel.setVisible(true);
+    }//GEN-LAST:event_SignOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,7 +280,13 @@ public class Maindish extends javax.swing.JFrame {
     private javax.swing.JButton Drink;
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
+    private javax.swing.JList<String> Menuall;
     private javax.swing.JButton SignOut;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel pic1;
     // End of variables declaration//GEN-END:variables
 }

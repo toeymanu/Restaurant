@@ -5,6 +5,9 @@
  */
 package restuarant.view;
 
+import java.util.ArrayList;
+import restuarant.controller.Function;
+
 /**
  *
  * @author ASUS
@@ -14,8 +17,30 @@ public class Desserts extends javax.swing.JFrame {
     /**
      * Creates new form Desserts
      */
+    private String username = null;
+
+
+    public Desserts(String user) {
+        initComponents();
+        username = user;
+    }
     public Desserts() {
         initComponents();
+        setLocationRelativeTo(null);
+
+        AllDrink.setModel(new javax.swing.AbstractListModel<String>() {
+            ArrayList<String> strings = Function.getAllDessert();
+
+            @Override
+            public int getSize() {
+                return strings.size();
+            }
+
+            @Override
+            public String getElementAt(int i) {
+                return strings.get(i);
+            }
+        });
     }
 
     /**
@@ -35,7 +60,9 @@ public class Desserts extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         description = new javax.swing.JTextArea();
         pic2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        AllDrink = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,6 +74,11 @@ public class Desserts extends javax.swing.JFrame {
         Homepage.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Homepage.setForeground(new java.awt.Color(255, 255, 255));
         Homepage.setText("Homepage");
+        Homepage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomepageActionPerformed(evt);
+            }
+        });
         getContentPane().add(Homepage);
         Homepage.setBounds(220, 140, 120, 40);
 
@@ -54,6 +86,11 @@ public class Desserts extends javax.swing.JFrame {
         Mandish.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Mandish.setForeground(new java.awt.Color(255, 255, 255));
         Mandish.setText("Maindish");
+        Mandish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MandishActionPerformed(evt);
+            }
+        });
         getContentPane().add(Mandish);
         Mandish.setBounds(340, 140, 130, 40);
 
@@ -61,6 +98,11 @@ public class Desserts extends javax.swing.JFrame {
         Dessert.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         Dessert.setForeground(new java.awt.Color(255, 255, 255));
         Dessert.setText("Dessert");
+        Dessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DessertActionPerformed(evt);
+            }
+        });
         getContentPane().add(Dessert);
         Dessert.setBounds(470, 140, 130, 40);
 
@@ -68,6 +110,11 @@ public class Desserts extends javax.swing.JFrame {
         SignOut.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setText("Sign-Out");
+        SignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignOutActionPerformed(evt);
+            }
+        });
         getContentPane().add(SignOut);
         SignOut.setBounds(730, 140, 130, 40);
 
@@ -90,7 +137,7 @@ public class Desserts extends javax.swing.JFrame {
         jScrollPane1.setViewportView(description);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(430, 260, 540, 170);
+        jScrollPane1.setBounds(60, 540, 540, 170);
 
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
@@ -107,16 +154,24 @@ public class Desserts extends javax.swing.JFrame {
         );
 
         getContentPane().add(pic2);
-        pic2.setBounds(80, 260, 320, 250);
+        pic2.setBounds(60, 270, 320, 250);
 
-        jTextField1.setText("Name");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        AllDrink.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        AllDrink.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                AllDrinkValueChanged(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(130, 220, 69, 22);
+        jScrollPane2.setViewportView(AllDrink);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(630, 260, 360, 260);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(70, 220, 300, 40);
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
         getContentPane().add(BG);
@@ -126,12 +181,43 @@ public class Desserts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
-        // TODO add your handling code here:
+        Drink d = new Drink(username);
+        this.setVisible(false);
+        d.setVisible(true);
     }//GEN-LAST:event_DrinkActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void HomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomepageActionPerformed
+        Welcomeuser user = new Welcomeuser(username);
+        this.setVisible(false);
+        user.setVisible(true);
+    }//GEN-LAST:event_HomepageActionPerformed
+
+    private void MandishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MandishActionPerformed
+        Maindish md = new Maindish(username);
+        this.setVisible(false);
+        md.setVisible(true);
+    }//GEN-LAST:event_MandishActionPerformed
+
+    private void DessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertActionPerformed
+        Desserts ds = new Desserts(username);
+        this.setVisible(false);
+        ds.setVisible(true);
+    }//GEN-LAST:event_DessertActionPerformed
+
+    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
+         username = null;
+        
+        Welcome wel = new Welcome();
+        this.setVisible(false);
+        wel.setVisible(true);
+    }//GEN-LAST:event_SignOutActionPerformed
+
+    private void AllDrinkValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AllDrinkValueChanged
+         System.out.println(AllDrink.getSelectedValue());
+        String menu[] = Function.getMenu(AllDrink.getSelectedValue());
+        jLabel1.setText(menu[0]);
+        description.setText(menu[2]);
+    }//GEN-LAST:event_AllDrinkValueChanged
 
     /**
      * @param args the command line arguments
@@ -169,6 +255,7 @@ public class Desserts extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> AllDrink;
     private javax.swing.JLabel BG;
     private javax.swing.JButton Dessert;
     private javax.swing.JButton Drink;
@@ -176,8 +263,9 @@ public class Desserts extends javax.swing.JFrame {
     private javax.swing.JButton Mandish;
     private javax.swing.JButton SignOut;
     private javax.swing.JTextArea description;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel pic2;
     // End of variables declaration//GEN-END:variables
 }

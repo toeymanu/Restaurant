@@ -12,21 +12,20 @@ package restuarant.view;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Toolkit;
 import javax.swing.WindowConstants;
-public class WelcomeAdmin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Welcome
-     */
+public class Welcomeuser extends javax.swing.JFrame {
+
     private String username = null;
 
-    public WelcomeAdmin() {
+    public Welcomeuser() {
         initComponents();
     }
 
-    public WelcomeAdmin(String user) {
+    public Welcomeuser(String user) {
         initComponents();
         username = user;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,21 +38,23 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         Welcome = new javax.swing.JLabel();
         Mainpage = new javax.swing.JButton();
         Feedbackk = new javax.swing.JButton();
-        LogIn = new javax.swing.JButton();
-        Regis = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
+        maindish = new javax.swing.JButton();
+        Drink = new javax.swing.JButton();
+        Dessert = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sum-jang Restaurant");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("spoon-and-fork-crossed_318-33017.jpg")));
-        setSize(new java.awt.Dimension(1220, 1080));
+        setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
-        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 70)); // NOI18N
+        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 45)); // NOI18N
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
-        Welcome.setText("Welcome To Sum-jang");
+        Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(140, 30, 850, 150);
+        Welcome.setBounds(140, 0, 880, 150);
 
         Mainpage.setBackground(new java.awt.Color(255, 51, 51));
         Mainpage.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -65,9 +66,9 @@ public class WelcomeAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Mainpage);
-        Mainpage.setBounds(680, 250, 100, 20);
+        Mainpage.setBounds(130, 160, 100, 40);
 
-        Feedbackk.setBackground(new java.awt.Color(255, 51, 51));
+        Feedbackk.setBackground(new java.awt.Color(0, 0, 0));
         Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         Feedbackk.setForeground(new java.awt.Color(255, 255, 255));
         Feedbackk.setText("Feedback");
@@ -77,57 +78,97 @@ public class WelcomeAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(790, 250, 110, 20);
+        Feedbackk.setBounds(950, 670, 130, 50);
 
-        LogIn.setBackground(new java.awt.Color(255, 51, 51));
-        LogIn.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        LogIn.setForeground(new java.awt.Color(255, 255, 255));
-        LogIn.setText("Log-In");
-        LogIn.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(255, 51, 51));
+        logout.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("Logout");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(LogIn);
-        LogIn.setBounds(880, 200, 70, 20);
+        getContentPane().add(logout);
+        logout.setBounds(950, 160, 100, 40);
 
-        Regis.setBackground(new java.awt.Color(255, 51, 51));
-        Regis.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        Regis.setForeground(new java.awt.Color(255, 255, 255));
-        Regis.setText("Resgister");
-        Regis.addActionListener(new java.awt.event.ActionListener() {
+        maindish.setBackground(new java.awt.Color(255, 51, 51));
+        maindish.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        maindish.setForeground(new java.awt.Color(255, 255, 255));
+        maindish.setText("Maindish");
+        maindish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisActionPerformed(evt);
+                maindishActionPerformed(evt);
             }
         });
-        getContentPane().add(Regis);
-        Regis.setBounds(750, 200, 100, 20);
+        getContentPane().add(maindish);
+        maindish.setBounds(300, 160, 100, 40);
+
+        Drink.setText("Drink");
+        Drink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DrinkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Drink);
+        Drink.setBounds(520, 170, 79, 29);
+
+        Dessert.setText("Dessert");
+        Dessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DessertActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Dessert);
+        Dessert.setBounds(720, 170, 97, 29);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/workWel.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/chi1.jpg"))); // NOI18N
         getContentPane().add(background);
-        background.setBounds(0, -210, 1220, 1170);
+        background.setBounds(0, 0, 1080, 720);
 
-        setSize(new java.awt.Dimension(1096, 759));
+        setSize(new java.awt.Dimension(1080, 742));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MainpageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainpageActionPerformed
-        // TODO add your handling code here:
+        Welcomeuser user = new Welcomeuser();
+        this.setVisible(false);
+        user.setVisible(true);
     }//GEN-LAST:event_MainpageActionPerformed
 
     private void FeedbackkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackkActionPerformed
-        // TODO add your handling code here:
+        Feedback feed = new Feedback();
+        this.setVisible(false);
+        feed.setVisible(true);
     }//GEN-LAST:event_FeedbackkActionPerformed
 
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogInActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        username = null;
+        
+        Welcome wel = new Welcome();
+        this.setVisible(false);
+        wel.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
 
-    private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisActionPerformed
+    private void maindishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maindishActionPerformed
+        Maindish md = new Maindish();
+        this.setVisible(false);
+        md.setVisible(true);
+    }//GEN-LAST:event_maindishActionPerformed
+
+    private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed
+        Drink d = new Drink();
+        this.setVisible(false);
+        d.setVisible(true);
+    }//GEN-LAST:event_DrinkActionPerformed
+
+    private void DessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertActionPerformed
+        Desserts ds = new Desserts();
+        this.setVisible(false);
+        ds.setVisible(true);
+    }//GEN-LAST:event_DessertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,13 +187,13 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcomeuser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcomeuser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcomeuser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcomeuser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -162,20 +203,22 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               WelcomeAdmin myFrame2 = new WelcomeAdmin( );
+                Welcomeuser myFrame2 = new Welcomeuser();
                 myFrame2.setExtendedState(MAXIMIZED_BOTH);
-                myFrame2.setDefaultCloseOperation ( WindowConstants.EXIT_ON_CLOSE );
-                new WelcomeAdmin().setVisible(true);
+                myFrame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                new Welcomeuser().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Dessert;
+    private javax.swing.JButton Drink;
     private javax.swing.JButton Feedbackk;
-    private javax.swing.JButton LogIn;
     private javax.swing.JButton Mainpage;
-    private javax.swing.JButton Regis;
     private javax.swing.JLabel Welcome;
     private javax.swing.JLabel background;
+    private javax.swing.JButton logout;
+    private javax.swing.JButton maindish;
     // End of variables declaration//GEN-END:variables
 }

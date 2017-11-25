@@ -17,9 +17,9 @@ import restuarant_model.PictureDB;
  * @author ASUS
  */
 public class DrinkEdit extends javax.swing.JFrame {
-    
-    
-    public String path,abPath;
+
+    public String path, abPath;
+
     /**
      * Creates new form Drink
      */
@@ -157,7 +157,7 @@ public class DrinkEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_MandishActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-               JFileChooser fileOpen = new JFileChooser();
+        JFileChooser fileOpen = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[]{"jpg", "jpeg", "png"});
         fileOpen.setFileFilter(filter);
         fileOpen.addChoosableFileFilter(filter);

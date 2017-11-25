@@ -132,9 +132,9 @@ static Connection con = ConnectionBuilder.getConnection();
         Background.setMaximumSize(new java.awt.Dimension(600, 600));
         Background.setMinimumSize(new java.awt.Dimension(600, 600));
         getContentPane().add(Background);
-        Background.setBounds(0, -170, 1220, 1080);
+        Background.setBounds(0, -180, 1220, 1080);
 
-        setBounds(0, 0, 1096, 797);
+        setBounds(0, 0, 1080, 742);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed

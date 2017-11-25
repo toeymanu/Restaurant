@@ -26,23 +26,21 @@ import restuarant.controller.Function;
  * @author ASUS
  */
 public class LogInForm extends javax.swing.JFrame {
+
     static Connection con = ConnectionBuilder.getConnection();
 
     public String UserID;
-    
- 
-    private String Username,password;
+
+    private String Username, password;
+
     public LogInForm() {
         initComponents();
 
     }
-  
-  
 
     /**
      * Creates new form LogInForm
      */
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -131,46 +129,43 @@ public class LogInForm extends javax.swing.JFrame {
     }//GEN-LAST:event_Password1ActionPerformed
 
     private void BloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloginActionPerformed
-       Username = Username1.getText();
+        Username = Username1.getText();
         password = Password1.getText();
         String Role = null;
         Function log = new Function();
-        if(log.LoginRestuarant(Username, password) == true){
+        if (log.LoginRestuarant(Username, password) == true) {
             try {
                 //System.out.println("test");
                 String sql = "Select * From User WHERE Username = ?";
                 PreparedStatement pre = con.prepareStatement(sql);
                 pre.setString(1, Username);
-                
+
                 ResultSet rs = pre.executeQuery();
-                if(rs.next()){
+                if (rs.next()) {
                     Role = rs.getString("Role_RoleID");
                     //System.out.println(Role);
-             
-                }else{
+
+                } else {
                     //System.out.println("fail");
                 }
-                
-                
+
             } catch (SQLException ex) {
                 Logger.getLogger(LogInForm.class.getName()).log(Level.SEVERE, null, ex);
             }
-           int Roleuser = Integer.parseInt(Role);
-           if(Roleuser == 0){
-               UserID = Username;
-               //System.out.println("123");
-               Welcome user = new Welcome();
-               this.setVisible(false);
-              user.setVisible(true);
-           }else{
-               //System.out.println("5555");
-               WelcomeAdmin admin = new WelcomeAdmin();
-               this.setVisible(false);
-               admin.setVisible(true);
-           }
-        }
-          
-            else {
+            int Roleuser = Integer.parseInt(Role);
+            if (Roleuser == 0) {
+                UserID = Username;
+                //System.out.println("123");
+                Welcomeuser user = new Welcomeuser(Username);
+                this.setVisible(false);
+                user.setVisible(true);
+            } else {
+                //System.out.println("5555");
+                WelcomeAdmin admin = new WelcomeAdmin(Username);
+                this.setVisible(false);
+                admin.setVisible(true);
+            }
+        } else {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
         }

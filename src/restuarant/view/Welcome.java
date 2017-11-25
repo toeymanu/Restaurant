@@ -31,7 +31,6 @@ public class Welcome extends javax.swing.JFrame {
     private void initComponents() {
 
         Welcome = new javax.swing.JLabel();
-        Mainpage = new javax.swing.JButton();
         Feedbackk = new javax.swing.JButton();
         LogIn = new javax.swing.JButton();
         Regis = new javax.swing.JButton();
@@ -43,23 +42,11 @@ public class Welcome extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
-        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 70)); // NOI18N
+        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 45)); // NOI18N
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
         Welcome.setBounds(130, 0, 850, 150);
-
-        Mainpage.setBackground(new java.awt.Color(255, 51, 51));
-        Mainpage.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        Mainpage.setForeground(new java.awt.Color(255, 255, 255));
-        Mainpage.setText("Mainpage");
-        Mainpage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MainpageActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Mainpage);
-        Mainpage.setBounds(820, 160, 100, 40);
 
         Feedbackk.setBackground(new java.awt.Color(0, 0, 0));
         Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -83,7 +70,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LogIn);
-        LogIn.setBounds(500, 160, 100, 40);
+        LogIn.setBounds(520, 330, 390, 90);
 
         Regis.setBackground(new java.awt.Color(255, 51, 51));
         Regis.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -95,7 +82,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Regis);
-        Regis.setBounds(180, 160, 100, 40);
+        Regis.setBounds(130, 330, 340, 90);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -103,17 +90,9 @@ public class Welcome extends javax.swing.JFrame {
         getContentPane().add(background);
         background.setBounds(0, 0, 1080, 720);
 
-        setSize(new java.awt.Dimension(1096, 759));
+        setSize(new java.awt.Dimension(1080, 759));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void MainpageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainpageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MainpageActionPerformed
-
-    private void FeedbackkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FeedbackkActionPerformed
 
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
         LogInForm login = new LogInForm();
@@ -126,6 +105,10 @@ public class Welcome extends javax.swing.JFrame {
         this.setVisible(false);
         regis.setVisible(true);
     }//GEN-LAST:event_RegisActionPerformed
+
+    private void FeedbackkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FeedbackkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,7 +152,6 @@ public class Welcome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Feedbackk;
     private javax.swing.JButton LogIn;
-    private javax.swing.JButton Mainpage;
     private javax.swing.JButton Regis;
     private javax.swing.JLabel Welcome;
     private javax.swing.JLabel background;
