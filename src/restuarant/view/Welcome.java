@@ -35,23 +35,19 @@ public class Welcome extends javax.swing.JFrame {
         Feedbackk = new javax.swing.JButton();
         LogIn = new javax.swing.JButton();
         Regis = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        Drink = new javax.swing.JButton();
-        Desserts = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sum-jang Restaurant");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("spoon-and-fork-crossed_318-33017.jpg")));
-        setSize(new java.awt.Dimension(1220, 1080));
+        setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
         Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 70)); // NOI18N
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
-        Welcome.setText("Welcome To Sum-jang");
+        Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(140, 30, 850, 150);
+        Welcome.setBounds(130, 0, 850, 150);
 
         Mainpage.setBackground(new java.awt.Color(255, 51, 51));
         Mainpage.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -63,9 +59,9 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Mainpage);
-        Mainpage.setBounds(220, 240, 100, 20);
+        Mainpage.setBounds(820, 160, 100, 40);
 
-        Feedbackk.setBackground(new java.awt.Color(255, 51, 51));
+        Feedbackk.setBackground(new java.awt.Color(0, 0, 0));
         Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         Feedbackk.setForeground(new java.awt.Color(255, 255, 255));
         Feedbackk.setText("Feedback");
@@ -75,7 +71,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(390, 240, 110, 20);
+        Feedbackk.setBounds(950, 670, 130, 50);
 
         LogIn.setBackground(new java.awt.Color(255, 51, 51));
         LogIn.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -87,7 +83,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LogIn);
-        LogIn.setBounds(880, 200, 70, 20);
+        LogIn.setBounds(500, 160, 100, 40);
 
         Regis.setBackground(new java.awt.Color(255, 51, 51));
         Regis.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -99,37 +95,13 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Regis);
-        Regis.setBounds(750, 200, 100, 20);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 51)));
-
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(160, 370, 320, 290);
-
-        Drink.setBackground(new java.awt.Color(255, 51, 51));
-        Drink.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
-        Drink.setText("Drink");
-        getContentPane().add(Drink);
-        Drink.setBounds(570, 240, 97, 29);
-
-        Desserts.setBackground(new java.awt.Color(255, 51, 51));
-        Desserts.setText("Desserts");
-        Desserts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DessertsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Desserts);
-        Desserts.setBounds(720, 240, 99, 29);
+        Regis.setBounds(180, 160, 100, 40);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/workWel.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/chi1.jpg"))); // NOI18N
         getContentPane().add(background);
-        background.setBounds(0, -210, 1220, 1170);
+        background.setBounds(0, 0, 1080, 720);
 
         setSize(new java.awt.Dimension(1096, 759));
         setLocationRelativeTo(null);
@@ -152,10 +124,6 @@ public class Welcome extends javax.swing.JFrame {
     private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegisActionPerformed
-
-    private void DessertsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DessertsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,15 +165,11 @@ public class Welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Desserts;
-    private javax.swing.JButton Drink;
     private javax.swing.JButton Feedbackk;
     private javax.swing.JButton LogIn;
     private javax.swing.JButton Mainpage;
     private javax.swing.JButton Regis;
     private javax.swing.JLabel Welcome;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
