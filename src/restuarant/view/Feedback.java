@@ -37,6 +37,7 @@ public class Feedback extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Let you Feedback");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("spoon-and-fork-crossed_318-33017.jpg")));
+        setMinimumSize(new java.awt.Dimension(1080, 720));
         setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
@@ -53,13 +54,10 @@ public class Feedback extends javax.swing.JFrame {
         Submit.setBounds(470, 660, 140, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/feedback.jpg"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(1080, 720));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1080, 720));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1080, 720));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(10, -180, 1220, 1080);
 
-        pack();
+        setBounds(0, 0, 1098, 767);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

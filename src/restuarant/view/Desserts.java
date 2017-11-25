@@ -131,13 +131,16 @@ public class Desserts extends javax.swing.JFrame {
         Drink.setBounds(600, 140, 130, 40);
 
         description.setColumns(20);
+        description.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         description.setLineWrap(true);
         description.setRows(5);
+        description.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
+        description.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         description.setEnabled(false);
         jScrollPane1.setViewportView(description);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 540, 540, 170);
+        jScrollPane1.setBounds(50, 530, 480, 160);
 
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
@@ -146,16 +149,18 @@ public class Desserts extends javax.swing.JFrame {
         pic2.setLayout(pic2Layout);
         pic2Layout.setHorizontalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 312, Short.MAX_VALUE)
+            .addGap(0, 382, Short.MAX_VALUE)
         );
         pic2Layout.setVerticalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 242, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic2);
-        pic2.setBounds(60, 270, 320, 250);
+        pic2.setBounds(60, 260, 390, 260);
 
+        AllDrink.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(255, 0, 204)));
+        AllDrink.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         AllDrink.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -169,15 +174,17 @@ public class Desserts extends javax.swing.JFrame {
         jScrollPane2.setViewportView(AllDrink);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(630, 260, 360, 260);
+        jScrollPane2.setBounds(520, 260, 360, 260);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 220, 300, 40);
+        jLabel1.setBounds(70, 200, 300, 50);
 
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
         getContentPane().add(BG);
         BG.setBounds(0, 10, 1080, 720);
 
-        pack();
+        setBounds(0, 0, 1098, 767);
     }// </editor-fold>//GEN-END:initComponents
 
     private void DrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkActionPerformed

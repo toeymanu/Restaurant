@@ -54,9 +54,9 @@ public class Welcomeuser extends javax.swing.JFrame {
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(140, 0, 880, 150);
+        Welcome.setBounds(280, 0, 880, 150);
 
-        Mainpage.setBackground(new java.awt.Color(255, 51, 51));
+        Mainpage.setBackground(new java.awt.Color(0, 0, 0));
         Mainpage.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         Mainpage.setForeground(new java.awt.Color(255, 255, 255));
         Mainpage.setText("Mainpage");
@@ -78,9 +78,9 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(950, 670, 130, 50);
+        Feedbackk.setBounds(930, 630, 130, 60);
 
-        logout.setBackground(new java.awt.Color(255, 51, 51));
+        logout.setBackground(new java.awt.Color(0, 0, 0));
         logout.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setText("Logout");
@@ -92,7 +92,7 @@ public class Welcomeuser extends javax.swing.JFrame {
         getContentPane().add(logout);
         logout.setBounds(950, 160, 100, 40);
 
-        maindish.setBackground(new java.awt.Color(255, 51, 51));
+        maindish.setBackground(new java.awt.Color(0, 0, 0));
         maindish.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         maindish.setForeground(new java.awt.Color(255, 255, 255));
         maindish.setText("Maindish");
@@ -102,8 +102,11 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(maindish);
-        maindish.setBounds(300, 160, 100, 40);
+        maindish.setBounds(730, 160, 100, 40);
 
+        Drink.setBackground(new java.awt.Color(0, 0, 0));
+        Drink.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        Drink.setForeground(new java.awt.Color(255, 255, 255));
         Drink.setText("Drink");
         Drink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,8 +114,11 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Drink);
-        Drink.setBounds(520, 170, 79, 29);
+        Drink.setBounds(300, 160, 100, 40);
 
+        Dessert.setBackground(new java.awt.Color(0, 0, 0));
+        Dessert.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        Dessert.setForeground(new java.awt.Color(255, 255, 255));
         Dessert.setText("Dessert");
         Dessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +126,7 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Dessert);
-        Dessert.setBounds(720, 170, 97, 29);
+        Dessert.setBounds(510, 160, 97, 40);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N

@@ -46,10 +46,10 @@ public class Welcome extends javax.swing.JFrame {
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(130, 0, 850, 150);
+        Welcome.setBounds(290, 0, 850, 150);
 
         Feedbackk.setBackground(new java.awt.Color(0, 0, 0));
-        Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        Feedbackk.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
         Feedbackk.setForeground(new java.awt.Color(255, 255, 255));
         Feedbackk.setText("Feedback");
         Feedbackk.addActionListener(new java.awt.event.ActionListener() {
@@ -58,10 +58,10 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(950, 670, 130, 50);
+        Feedbackk.setBounds(870, 630, 190, 80);
 
         LogIn.setBackground(new java.awt.Color(255, 51, 51));
-        LogIn.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        LogIn.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
         LogIn.setForeground(new java.awt.Color(255, 255, 255));
         LogIn.setText("Log-In");
         LogIn.addActionListener(new java.awt.event.ActionListener() {
@@ -70,10 +70,10 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LogIn);
-        LogIn.setBounds(520, 330, 390, 90);
+        LogIn.setBounds(600, 320, 390, 90);
 
         Regis.setBackground(new java.awt.Color(255, 51, 51));
-        Regis.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        Regis.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
         Regis.setForeground(new java.awt.Color(255, 255, 255));
         Regis.setText("Resgister");
         Regis.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Regis);
-        Regis.setBounds(130, 330, 340, 90);
+        Regis.setBounds(150, 320, 340, 90);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N

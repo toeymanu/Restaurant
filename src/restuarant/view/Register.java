@@ -59,6 +59,7 @@ static Connection con = ConnectionBuilder.getConnection();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("spoon-and-fork-crossed_318-33017.jpg")));
         setMinimumSize(new java.awt.Dimension(800, 800));
         setResizable(false);
+        setSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -134,7 +135,7 @@ static Connection con = ConnectionBuilder.getConnection();
         getContentPane().add(Background);
         Background.setBounds(0, -180, 1220, 1080);
 
-        setBounds(0, 0, 1080, 742);
+        setBounds(0, 0, 1098, 638);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
