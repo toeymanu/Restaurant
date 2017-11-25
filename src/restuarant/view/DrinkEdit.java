@@ -5,6 +5,11 @@
  */
 package restuarant.view;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import restuarant_model.PictureDB;
 
 /**
@@ -12,7 +17,9 @@ import restuarant_model.PictureDB;
  * @author ASUS
  */
 public class DrinkEdit extends javax.swing.JFrame {
-
+    
+    
+    public String path,abPath;
     /**
      * Creates new form Drink
      */
@@ -35,13 +42,21 @@ public class DrinkEdit extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
+        piclabel = new javax.swing.JLabel();
         pic2 = new javax.swing.JPanel();
+        pic2label = new javax.swing.JLabel();
         pic3 = new javax.swing.JPanel();
+        pic3label = new javax.swing.JLabel();
         pic4 = new javax.swing.JPanel();
+        pic4label = new javax.swing.JLabel();
         Namepic1 = new javax.swing.JLabel();
         Namepic2 = new javax.swing.JLabel();
         Namepic3 = new javax.swing.JLabel();
         Namepic4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,11 +115,11 @@ public class DrinkEdit extends javax.swing.JFrame {
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(piclabel, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(piclabel, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic1);
@@ -117,11 +132,11 @@ public class DrinkEdit extends javax.swing.JFrame {
         pic2.setLayout(pic2Layout);
         pic2Layout.setHorizontalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic2Layout.setVerticalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic2);
@@ -134,11 +149,11 @@ public class DrinkEdit extends javax.swing.JFrame {
         pic3.setLayout(pic3Layout);
         pic3Layout.setHorizontalGroup(
             pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic3Layout.setVerticalGroup(
             pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic3);
@@ -151,11 +166,11 @@ public class DrinkEdit extends javax.swing.JFrame {
         pic4.setLayout(pic4Layout);
         pic4Layout.setHorizontalGroup(
             pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic4Layout.setVerticalGroup(
             pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic4);
@@ -163,20 +178,41 @@ public class DrinkEdit extends javax.swing.JFrame {
 
         Namepic1.setText("jLabel1");
         getContentPane().add(Namepic1);
-        Namepic1.setBounds(240, 380, 45, 16);
+        Namepic1.setBounds(240, 380, 160, 30);
         Namepic1.setText(PictureDB.getMenu_Name(1));
 
         Namepic2.setText("jLabel2");
         getContentPane().add(Namepic2);
-        Namepic2.setBounds(670, 380, 45, 16);
+        Namepic2.setBounds(670, 380, 160, 30);
 
         Namepic3.setText("jLabel3");
         getContentPane().add(Namepic3);
-        Namepic3.setBounds(660, 630, 45, 16);
+        Namepic3.setBounds(660, 630, 170, 30);
 
         Namepic4.setText("jLabel4");
         getContentPane().add(Namepic4);
-        Namepic4.setBounds(240, 620, 45, 16);
+        Namepic4.setBounds(240, 620, 170, 30);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(120, 340, 97, 29);
+
+        jButton2.setText("jButton2");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(830, 340, 97, 29);
+
+        jButton3.setText("jButton3");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(830, 580, 97, 29);
+
+        jButton4.setText("jButton4");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(130, 570, 97, 29);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/drink1.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -200,6 +236,26 @@ public class DrinkEdit extends javax.swing.JFrame {
         this.setVisible(false);
         md.setVisible(true);
     }//GEN-LAST:event_MandishActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+               JFileChooser fileOpen = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG file", new String[]{"jpg", "jpeg", "png"});
+        fileOpen.setFileFilter(filter);
+        fileOpen.addChoosableFileFilter(filter);
+        int result = fileOpen.showDialog(null, "Choose Image");
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selecFile = fileOpen.getSelectedFile();
+            if (selecFile == null) {
+                System.out.println(" ");
+            } else {
+                abPath = selecFile.getAbsolutePath();
+                path = selecFile.getName();
+                piclabel.setIcon(new ImageIcon((new ImageIcon(abPath).getImage().getScaledInstance(395, 335, Image.SCALE_SMOOTH))));
+                System.out.println(path);
+            }
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,9 +304,17 @@ public class DrinkEdit extends javax.swing.JFrame {
     private javax.swing.JLabel Namepic3;
     private javax.swing.JLabel Namepic4;
     private javax.swing.JButton SignOut;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JPanel pic1;
     private javax.swing.JPanel pic2;
+    private javax.swing.JLabel pic2label;
     private javax.swing.JPanel pic3;
+    private javax.swing.JLabel pic3label;
     private javax.swing.JPanel pic4;
+    private javax.swing.JLabel pic4label;
+    private javax.swing.JLabel piclabel;
     // End of variables declaration//GEN-END:variables
 }

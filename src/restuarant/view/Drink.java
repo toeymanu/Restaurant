@@ -35,9 +35,13 @@ public class Drink extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
+        pic1label = new javax.swing.JLabel();
         pic2 = new javax.swing.JPanel();
+        pic2label = new javax.swing.JLabel();
         pic3 = new javax.swing.JPanel();
+        pic3label = new javax.swing.JLabel();
         pic4 = new javax.swing.JPanel();
+        pic4label = new javax.swing.JLabel();
         Namepic1 = new javax.swing.JLabel();
         Namepic2 = new javax.swing.JLabel();
         Namepic3 = new javax.swing.JLabel();
@@ -100,11 +104,11 @@ public class Drink extends javax.swing.JFrame {
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic1label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic1label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic1);
@@ -117,11 +121,11 @@ public class Drink extends javax.swing.JFrame {
         pic2.setLayout(pic2Layout);
         pic2Layout.setHorizontalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic2Layout.setVerticalGroup(
             pic2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic2label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic2);
@@ -134,11 +138,11 @@ public class Drink extends javax.swing.JFrame {
         pic3.setLayout(pic3Layout);
         pic3Layout.setHorizontalGroup(
             pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic3Layout.setVerticalGroup(
             pic3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic3label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic3);
@@ -151,11 +155,11 @@ public class Drink extends javax.swing.JFrame {
         pic4.setLayout(pic4Layout);
         pic4Layout.setHorizontalGroup(
             pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
         );
         pic4Layout.setVerticalGroup(
             pic4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addComponent(pic4label, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
 
         getContentPane().add(pic4);
@@ -248,8 +252,12 @@ public class Drink extends javax.swing.JFrame {
     private javax.swing.JLabel Namepic4;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel pic1;
+    private javax.swing.JLabel pic1label;
     private javax.swing.JPanel pic2;
+    private javax.swing.JLabel pic2label;
     private javax.swing.JPanel pic3;
+    private javax.swing.JLabel pic3label;
     private javax.swing.JPanel pic4;
+    private javax.swing.JLabel pic4label;
     // End of variables declaration//GEN-END:variables
 }
