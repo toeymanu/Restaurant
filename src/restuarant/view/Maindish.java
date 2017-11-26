@@ -5,7 +5,12 @@
  */
 package restuarant.view;
 
+import java.awt.Image;
+import static java.awt.SystemColor.menu;
+//import static java.awt.SystemColor.menu;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import restuarant.controller.ConnectionBuilder;
 import restuarant.controller.Function;
 
 /**
@@ -13,23 +18,22 @@ import restuarant.controller.Function;
  * @author ASUS
  */
 public class Maindish extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form Maindish
      */
-    private String username = null;
+    private int username = -1;
+    private static int quantity = 0;
+    Double Price = 0.0;
+    Double tol;
+    String id;
+    private String photo;
 
-   
-
-    public Maindish(String user) {
+    public Maindish(int user) {
         initComponents();
         username = user;
-    }
-    public Maindish() {
-     initComponents();
-     setLocationRelativeTo(null);
-     
-     
+        setLocationRelativeTo(null);
+
         Menuall.setModel(new javax.swing.AbstractListModel<String>() {
             ArrayList<String> strings = Function.getAllMaindish();
 
@@ -43,9 +47,11 @@ public class Maindish extends javax.swing.JFrame {
                 return strings.get(i);
             }
         });
+    }
 
-     
-     
+    public Maindish() {
+        initComponents();
+
     }
 
     /**
@@ -63,12 +69,17 @@ public class Maindish extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ImageS = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Menuall = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        Total = new javax.swing.JLabel();
+        MenuID1 = new javax.swing.JLabel();
         Background1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,18 +145,18 @@ public class Maindish extends javax.swing.JFrame {
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
 
-        jLabel1.setText("2");
+        ImageS.setText("2");
 
         javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+            .addComponent(ImageS, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pic1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ImageS, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -178,6 +189,19 @@ public class Maindish extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(100, 170, 330, 50);
 
+        jLabel3.setText("Quentity");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(610, 580, 60, 30);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(680, 580, 96, 27);
+
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
@@ -185,6 +209,22 @@ public class Maindish extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 570, 500, 120);
+
+        jButton1.setFont(new java.awt.Font("Kanit", 0, 13)); // NOI18N
+        jButton1.setText("สั่งเลย");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(950, 620, 97, 29);
+        getContentPane().add(Total);
+        Total.setBounds(600, 620, 190, 30);
+
+        MenuID1.setText("jLabel4");
+        getContentPane().add(MenuID1);
+        MenuID1.setBounds(690, 540, 80, 30);
 
         Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
         getContentPane().add(Background1);
@@ -204,11 +244,18 @@ public class Maindish extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuallMouseClicked
 
     private void MenuallValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_MenuallValueChanged
-        System.out.println(Menuall.getSelectedValue());
+//        System.out.println(Menuall.getSelectedValue());
         String menu[] = Function.getMenu(Menuall.getSelectedValue());
-            jLabel2.setText(menu[0]);
-            jTextArea1.setText(menu[2]);
+        jLabel2.setText(menu[0]);
+        jTextArea1.setText(menu[2]);
+        Total.setText(menu[3]);
+        Price = Double.parseDouble(menu[3]);
+        MenuID1.setText(menu[4]);
         
+        
+//        Image.setIcon(new ImageIcon((new ImageIcon("src/Images/"+(menu[2])).getImage().getScaledInstance(395,335.))));
+        ImageS.setIcon(new ImageIcon((new ImageIcon("/src/Guilmg/"+(menu[1])).getImage().getScaledInstance(395,335,Image.SCALE_SMOOTH))));
+
     }//GEN-LAST:event_MenuallValueChanged
 
     private void HomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomepageActionPerformed
@@ -230,12 +277,30 @@ public class Maindish extends javax.swing.JFrame {
     }//GEN-LAST:event_DessertActionPerformed
 
     private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-         username = null;
-        
+        username = -1;
+
         Welcome wel = new Welcome();
         this.setVisible(false);
         wel.setVisible(true);
     }//GEN-LAST:event_SignOutActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+//            quantity = jComboBox1.getSelectedIndex();
+
+//        tol = (quantity+1) * Price;
+//        Total.setText("Total Price: "+tol);
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        quantity = jComboBox1.getSelectedIndex();
+
+        String menu[] = Function.getMenu(Menuall.getSelectedValue());
+
+        Function func = new Function();
+        func.putPrice(menu[4], quantity + 1);
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,11 +342,16 @@ public class Maindish extends javax.swing.JFrame {
     private javax.swing.JButton Dessert;
     private javax.swing.JButton Drink;
     private javax.swing.JButton Homepage;
+    private javax.swing.JLabel ImageS;
     private javax.swing.JButton Mandish;
+    private javax.swing.JLabel MenuID1;
     private javax.swing.JList<String> Menuall;
     private javax.swing.JButton SignOut;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel Total;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

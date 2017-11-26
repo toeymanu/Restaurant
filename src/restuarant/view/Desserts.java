@@ -17,15 +17,11 @@ public class Desserts extends javax.swing.JFrame {
     /**
      * Creates new form Desserts
      */
-    private String username = null;
+    private int username = -1;
 
-
-    public Desserts(String user) {
+    public Desserts(int user) {
         initComponents();
         username = user;
-    }
-    public Desserts() {
-        initComponents();
         setLocationRelativeTo(null);
 
         AllDrink.setModel(new javax.swing.AbstractListModel<String>() {
@@ -41,6 +37,11 @@ public class Desserts extends javax.swing.JFrame {
                 return strings.get(i);
             }
         });
+    }
+
+    public Desserts() {
+        initComponents();
+
     }
 
     /**
@@ -212,15 +213,15 @@ public class Desserts extends javax.swing.JFrame {
     }//GEN-LAST:event_DessertActionPerformed
 
     private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-         username = null;
-        
+        username = -1;
+
         Welcome wel = new Welcome();
         this.setVisible(false);
         wel.setVisible(true);
     }//GEN-LAST:event_SignOutActionPerformed
 
     private void AllDrinkValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AllDrinkValueChanged
-         System.out.println(AllDrink.getSelectedValue());
+//         System.out.println(AllDrink.getSelectedValue());
         String menu[] = Function.getMenu(AllDrink.getSelectedValue());
         jLabel1.setText(menu[0]);
         description.setText(menu[2]);

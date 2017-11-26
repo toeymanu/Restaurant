@@ -29,7 +29,8 @@ public class LogInForm extends javax.swing.JFrame {
 
     static Connection con = ConnectionBuilder.getConnection();
 
-    public String UserID;
+    public static String UserID;
+    public static int UserIDReal;
 
     private String Username, password;
 
@@ -132,6 +133,7 @@ public class LogInForm extends javax.swing.JFrame {
         Username = Username1.getText();
         password = Password1.getText();
         String Role = null;
+      
         Function log = new Function();
         if (log.LoginRestuarant(Username, password) == true) {
             try {
@@ -143,6 +145,8 @@ public class LogInForm extends javax.swing.JFrame {
                 ResultSet rs = pre.executeQuery();
                 if (rs.next()) {
                     Role = rs.getString("Role_RoleID");
+                    UserIDReal = rs.getInt("User_ID");
+//                    System.out.println(UserIDReal);
                     //System.out.println(Role);
 
                 } else {
@@ -156,12 +160,13 @@ public class LogInForm extends javax.swing.JFrame {
             if (Roleuser == 0) {
                 UserID = Username;
                 //System.out.println("123");
-                Welcomeuser user = new Welcomeuser(Username);
+                
+                Welcomeuser user = new Welcomeuser(UserIDReal);
                 this.setVisible(false);
                 user.setVisible(true);
             } else {
                 //System.out.println("5555");
-                WelcomeAdmin admin = new WelcomeAdmin(Username);
+                WelcomeAdmin admin = new WelcomeAdmin(UserIDReal);
                 this.setVisible(false);
                 admin.setVisible(true);
             }
@@ -169,7 +174,7 @@ public class LogInForm extends javax.swing.JFrame {
             JOptionPane frame = new JOptionPane();
             JOptionPane.showMessageDialog(frame, "Failed to Login \n Please re-enter your username or password", "Login", JOptionPane.ERROR_MESSAGE);
         }
-        System.out.println(UserID);
+//        System.out.println(UserID);
     }//GEN-LAST:event_BloginActionPerformed
 
     /**

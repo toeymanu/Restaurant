@@ -28,10 +28,10 @@ public class ConnectionBuilder {
         String driverName = "com.mysql.jdbc.Driver";
         try {
             Class.forName(driverName);
-            System.out.println("test");
+//            System.out.println("test");
             String url = "jdbc:mysql://" + hostName + "/" + db_name + "?characterEncoding=UTF-8";
             con = DriverManager.getConnection(url, user, pass);
-            System.out.println("Driver Connect");
+//            System.out.println("Driver Connect");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         } catch (Exception e) {

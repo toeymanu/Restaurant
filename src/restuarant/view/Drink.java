@@ -18,14 +18,11 @@ public class Drink extends javax.swing.JFrame {
     /**
      * Creates new form Drink
      */
-    private String username = null;
+    private int username = -1;
 
-    public Drink(String user) {
+    public Drink(int user) {
         initComponents();
         username = user;
-    }
-    public Drink() {
-        initComponents();
         setLocationRelativeTo(null);
 
         AllDrink.setModel(new javax.swing.AbstractListModel<String>() {
@@ -41,6 +38,10 @@ public class Drink extends javax.swing.JFrame {
                 return strings.get(i);
             }
         });
+    }
+
+    public Drink() {
+        initComponents();
 
     }
 
@@ -210,7 +211,7 @@ public class Drink extends javax.swing.JFrame {
     }//GEN-LAST:event_MandishActionPerformed
 
     private void AllDrinkValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AllDrinkValueChanged
-        System.out.println(AllDrink.getSelectedValue());
+//        System.out.println(AllDrink.getSelectedValue());
         String menu[] = Function.getMenu(AllDrink.getSelectedValue());
         Namepic1.setText(menu[0]);
         jTextArea1.setText(menu[2]);
@@ -231,8 +232,8 @@ public class Drink extends javax.swing.JFrame {
     }//GEN-LAST:event_DessertActionPerformed
 
     private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-         username = null;
-        
+        username = -1;
+
         Welcome wel = new Welcome();
         this.setVisible(false);
         wel.setVisible(true);

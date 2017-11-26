@@ -17,13 +17,13 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
-    private String username = null;
+    private int username = -1;
 
     public WelcomeAdmin() {
         initComponents();
     }
 
-    public WelcomeAdmin(String user) {
+    public WelcomeAdmin(int user) {
         initComponents();
         username = user;
     }
@@ -37,10 +37,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         Welcome = new javax.swing.JLabel();
-        Mainpage = new javax.swing.JButton();
-        Feedbackk = new javax.swing.JButton();
-        LogIn = new javax.swing.JButton();
-        Regis = new javax.swing.JButton();
+        Report = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,59 +46,20 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1220, 1080));
         getContentPane().setLayout(null);
 
-        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 48)); // NOI18N
+        Welcome.setFont(new java.awt.Font("Tw Cen MT Condensed", 3, 45)); // NOI18N
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(250, 30, 830, 140);
+        Welcome.setBounds(130, 40, 830, 140);
 
-        Mainpage.setBackground(new java.awt.Color(255, 51, 51));
-        Mainpage.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        Mainpage.setForeground(new java.awt.Color(255, 255, 255));
-        Mainpage.setText("Mainpage");
-        Mainpage.addActionListener(new java.awt.event.ActionListener() {
+        Report.setText("Report");
+        Report.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MainpageActionPerformed(evt);
+                ReportActionPerformed(evt);
             }
         });
-        getContentPane().add(Mainpage);
-        Mainpage.setBounds(790, 160, 100, 30);
-
-        Feedbackk.setBackground(new java.awt.Color(255, 51, 51));
-        Feedbackk.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        Feedbackk.setForeground(new java.awt.Color(255, 255, 255));
-        Feedbackk.setText("Feedback");
-        Feedbackk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FeedbackkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(660, 160, 100, 30);
-
-        LogIn.setBackground(new java.awt.Color(255, 51, 51));
-        LogIn.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        LogIn.setForeground(new java.awt.Color(255, 255, 255));
-        LogIn.setText("Log-In");
-        LogIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInActionPerformed(evt);
-            }
-        });
-        getContentPane().add(LogIn);
-        LogIn.setBounds(410, 160, 100, 30);
-
-        Regis.setBackground(new java.awt.Color(255, 51, 51));
-        Regis.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
-        Regis.setForeground(new java.awt.Color(255, 255, 255));
-        Regis.setText("Resgister");
-        Regis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Regis);
-        Regis.setBounds(230, 160, 120, 30);
+        getContentPane().add(Report);
+        Report.setBounds(430, 290, 260, 90);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -113,21 +71,11 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MainpageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainpageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MainpageActionPerformed
-
-    private void FeedbackkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FeedbackkActionPerformed
-
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogInActionPerformed
-
-    private void RegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisActionPerformed
+    private void ReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportActionPerformed
+        Reportview view = new Reportview(username);
+        this.setVisible(false);
+        view.setVisible(true);
+    }//GEN-LAST:event_ReportActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,10 +119,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Feedbackk;
-    private javax.swing.JButton LogIn;
-    private javax.swing.JButton Mainpage;
-    private javax.swing.JButton Regis;
+    private javax.swing.JButton Report;
     private javax.swing.JLabel Welcome;
     private javax.swing.JLabel background;
     // End of variables declaration//GEN-END:variables

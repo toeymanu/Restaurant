@@ -31,7 +31,6 @@ public class Welcome extends javax.swing.JFrame {
     private void initComponents() {
 
         Welcome = new javax.swing.JLabel();
-        Feedbackk = new javax.swing.JButton();
         LogIn = new javax.swing.JButton();
         Regis = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -46,19 +45,7 @@ public class Welcome extends javax.swing.JFrame {
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
         Welcome.setText("Welcome To Sum-jang Restaurant");
         getContentPane().add(Welcome);
-        Welcome.setBounds(290, 0, 850, 150);
-
-        Feedbackk.setBackground(new java.awt.Color(0, 0, 0));
-        Feedbackk.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
-        Feedbackk.setForeground(new java.awt.Color(255, 255, 255));
-        Feedbackk.setText("Feedback");
-        Feedbackk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FeedbackkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Feedbackk);
-        Feedbackk.setBounds(870, 630, 190, 80);
+        Welcome.setBounds(140, 0, 850, 150);
 
         LogIn.setBackground(new java.awt.Color(255, 51, 51));
         LogIn.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
@@ -106,10 +93,6 @@ public class Welcome extends javax.swing.JFrame {
         regis.setVisible(true);
     }//GEN-LAST:event_RegisActionPerformed
 
-    private void FeedbackkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedbackkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FeedbackkActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -150,7 +133,6 @@ public class Welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Feedbackk;
     private javax.swing.JButton LogIn;
     private javax.swing.JButton Regis;
     private javax.swing.JLabel Welcome;

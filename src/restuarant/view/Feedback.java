@@ -7,18 +7,24 @@ package restuarant.view;
 
 
 import java.awt.Toolkit;
+import restuarant.controller.Function;
 /**
  *
  * @author ASUS
  */
 public class Feedback extends javax.swing.JFrame {
-
+    private int username = -1;
     /**
      * Creates new form Feedback
      */
     public Feedback() {
         initComponents();
     }
+      public Feedback(int user) {
+        initComponents();
+        username = user;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,11 +51,22 @@ public class Feedback extends javax.swing.JFrame {
         jLabel2.setText("Please Give Feed Back");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(250, 140, 640, 90);
+
+        FBBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FBBarActionPerformed(evt);
+            }
+        });
         getContentPane().add(FBBar);
         FBBar.setBounds(300, 280, 520, 360);
 
         Submit.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
         getContentPane().add(Submit);
         Submit.setBounds(470, 660, 140, 50);
 
@@ -59,6 +76,16 @@ public class Feedback extends javax.swing.JFrame {
 
         setBounds(0, 0, 1098, 767);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void FBBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FBBarActionPerformed
+
+        
+    }//GEN-LAST:event_FBBarActionPerformed
+
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        Function func = new Function();
+        func.getFeedback(FBBar.getText());
+    }//GEN-LAST:event_SubmitActionPerformed
 
     /**
      * @param args the command line arguments
