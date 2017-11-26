@@ -95,8 +95,8 @@ public class Reportview extends javax.swing.JFrame {
 
             Connection con = ConnectionBuilder.getConnection();
             String sql = "select m.Menu_ID,m.Menu_Name,m.Menu_Description,m.Menu_Price,s.Status_Name,t.Type_Name "
-                    +"From Menu m join Menu_Status s on m.Menu_Status_Status_ID=s.Status_ID join Menu_Type t on m.Menu_Type_Type_ID = t.Type_ID "
-                    +"order by m.Menu_ID";
+                    + "From Menu m join Menu_Status s on m.Menu_Status_Status_ID=s.Status_ID join Menu_Type t on m.Menu_Type_Type_ID = t.Type_ID "
+                    + "order by m.Menu_ID";
             s = con.createStatement();
             ResultSet rs = s.executeQuery(sql);
             int row = 0;
@@ -108,7 +108,6 @@ public class Reportview extends javax.swing.JFrame {
                 model.setValueAt(rs.getString("m.Menu_Price"), row, 3);
                 model.setValueAt(rs.getString("s.Status_Name"), row, 4);
                 model.setValueAt(rs.getString("t.Type_Name"), row, 5);
-            
 
                 row++;
             }
@@ -118,8 +117,8 @@ public class Reportview extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-    
-     public void showFeedBack() {
+
+    public void showFeedBack() {
         Statement s = null;
         try {
             UserTable.setModel(new DefaultTableModel());
@@ -133,8 +132,8 @@ public class Reportview extends javax.swing.JFrame {
 
             Connection con = ConnectionBuilder.getConnection();
             String sql = "select f.FeedBack_ID,f.FeedBack_Detail,u.User_ID,u.FirstName,u.LastName,u.Tel "
-                    +"From FeedBack f join User u on f.User_UserID = u.User_ID "
-                    +"order by u.User_ID";
+                    + "From FeedBack f join User u on f.User_UserID = u.User_ID "
+                    + "order by u.User_ID";
             s = con.createStatement();
             ResultSet rs = s.executeQuery(sql);
             int row = 0;
@@ -146,7 +145,6 @@ public class Reportview extends javax.swing.JFrame {
                 model.setValueAt(rs.getString("u.FirstName"), row, 3);
                 model.setValueAt(rs.getString("u.LastName"), row, 4);
                 model.setValueAt(rs.getString("u.Tel"), row, 5);
-            
 
                 row++;
             }
@@ -156,7 +154,8 @@ public class Reportview extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-       public void showpro() {
+
+    public void showpro() {
         Statement s = null;
         try {
             UserTable.setModel(new DefaultTableModel());
@@ -183,6 +182,49 @@ public class Reportview extends javax.swing.JFrame {
         }
     }
 
+    public void showOrder() {
+        Statement s = null;
+        try {
+            UserTable.setModel(new DefaultTableModel());
+            DefaultTableModel model = (DefaultTableModel) UserTable.getModel();
+            model.addColumn("UserID");
+            model.addColumn("FirstName");
+            model.addColumn("Tel");
+            model.addColumn("MenuID");
+            model.addColumn("MenuName");
+            model.addColumn("Price");
+            model.addColumn("Quantity");
+            model.addColumn("Date");
+            model.addColumn("TotalPrice");
+
+            Connection con = ConnectionBuilder.getConnection();
+            String sql = "select u.User_ID,u.FirstName,u.Tel,m.Menu_ID,m.Menu_Name,m.Menu_Price,d.Quantity,o.TotalPrice,o.Order_Date "
+                    + "from User u join Orders o on u.User_ID = o.User_UserID "
+                    + "join MenuDetail d on o.Order_ID = d.Orders_OrderID join Menu m on d.Menu_MenuID = m.Menu_ID order by u.User_ID";
+            s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            int row = 0;
+            while (rs != null && rs.next()) {
+                model.addRow(new Object[0]);
+                model.setValueAt(rs.getString("u.User_ID"), row, 0);
+                model.setValueAt(rs.getString("u.FirstName"), row, 1);
+                model.setValueAt(rs.getString("u.Tel"), row, 2);
+                model.setValueAt(rs.getString("m.Menu_ID"), row, 3);
+                model.setValueAt(rs.getString("m.Menu_Name"), row, 4);
+                model.setValueAt(rs.getString("m.Menu_Price"), row, 5);
+                model.setValueAt(rs.getString("d.Quantity"), row,6);
+                model.setValueAt(rs.getString("o.Order_Date"), row, 7);
+                model.setValueAt(rs.getString("o.TotalPrice"), row, 8);
+
+                row++;
+            }
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -198,6 +240,7 @@ public class Reportview extends javax.swing.JFrame {
         Promotion = new javax.swing.JButton();
         FeedBack = new javax.swing.JButton();
         Signout = new javax.swing.JButton();
+        Orders = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         UserTable = new javax.swing.JTable();
         background = new javax.swing.JLabel();
@@ -248,7 +291,7 @@ public class Reportview extends javax.swing.JFrame {
             }
         });
         getContentPane().add(FeedBack);
-        FeedBack.setBounds(910, 600, 130, 40);
+        FeedBack.setBounds(910, 580, 130, 40);
 
         Signout.setText("Signout");
         Signout.addActionListener(new java.awt.event.ActionListener() {
@@ -258,6 +301,15 @@ public class Reportview extends javax.swing.JFrame {
         });
         getContentPane().add(Signout);
         Signout.setBounds(920, 190, 92, 29);
+
+        Orders.setText("OrderAll");
+        Orders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrdersActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Orders);
+        Orders.setBounds(917, 680, 120, 40);
 
         UserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -273,7 +325,7 @@ public class Reportview extends javax.swing.JFrame {
         jScrollPane1.setViewportView(UserTable);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 240, 830, 410);
+        jScrollPane1.setBounds(30, 240, 830, 460);
 
         background.setBackground(new java.awt.Color(255, 51, 51));
         background.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
@@ -300,7 +352,7 @@ public class Reportview extends javax.swing.JFrame {
 
     private void SignoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignoutActionPerformed
         username = -1;
-        
+
         Welcome wel = new Welcome();
         this.setVisible(false);
         wel.setVisible(true);
@@ -309,6 +361,10 @@ public class Reportview extends javax.swing.JFrame {
     private void FeedBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FeedBackActionPerformed
         showFeedBack();
     }//GEN-LAST:event_FeedBackActionPerformed
+
+    private void OrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersActionPerformed
+       showOrder();
+    }//GEN-LAST:event_OrdersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,6 +416,7 @@ public class Reportview extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FeedBack;
     private javax.swing.JButton Menu;
+    private javax.swing.JButton Orders;
     private javax.swing.JButton Promotion;
     private javax.swing.JButton Report;
     private javax.swing.JButton Signout;

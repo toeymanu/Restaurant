@@ -119,7 +119,7 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(maindish);
-        maindish.setBounds(730, 160, 100, 40);
+        maindish.setBounds(310, 160, 100, 40);
 
         Drink.setBackground(new java.awt.Color(0, 0, 0));
         Drink.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
@@ -131,7 +131,7 @@ public class Welcomeuser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Drink);
-        Drink.setBounds(300, 160, 100, 40);
+        Drink.setBounds(740, 160, 100, 40);
 
         Dessert.setBackground(new java.awt.Color(0, 0, 0));
         Dessert.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N

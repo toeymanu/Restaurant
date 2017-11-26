@@ -85,6 +85,10 @@ public class Feedback extends javax.swing.JFrame {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         Function func = new Function();
         func.getFeedback(FBBar.getText());
+        
+        Welcomeuser user = new Welcomeuser(username);
+        this.setVisible(false);
+        user.setVisible(true);
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**

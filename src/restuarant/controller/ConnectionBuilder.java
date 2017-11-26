@@ -20,18 +20,13 @@ public class ConnectionBuilder {
         String db_name = "toey";
         String user = "toey";
         String pass = "toey";
-        //asdaspodksapodkpaosdkpoaskdpoaskpdkopasd
-//        String user = "int203";
-//        String pass = "int203;";
-//nfiosdfiosdjfipasjdopsajdosajdpsajdasjdopasdjpoasdj
         String hostName = "db.int203.phornlert.me:3306";
         String driverName = "com.mysql.jdbc.Driver";
         try {
             Class.forName(driverName);
-//            System.out.println("test");
+
             String url = "jdbc:mysql://" + hostName + "/" + db_name + "?characterEncoding=UTF-8";
             con = DriverManager.getConnection(url, user, pass);
-//            System.out.println("Driver Connect");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         } catch (Exception e) {
@@ -50,4 +45,3 @@ public class ConnectionBuilder {
         }
     }
 }
-///////

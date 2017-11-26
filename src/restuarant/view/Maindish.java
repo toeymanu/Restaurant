@@ -68,6 +68,7 @@ public class Maindish extends javax.swing.JFrame {
         Dessert = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
         ImageS = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -129,7 +130,7 @@ public class Maindish extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SignOut);
-        SignOut.setBounds(730, 120, 130, 30);
+        SignOut.setBounds(830, 120, 130, 30);
 
         Drink.setBackground(new java.awt.Color(153, 153, 153));
         Drink.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
@@ -141,6 +142,15 @@ public class Maindish extends javax.swing.JFrame {
         });
         getContentPane().add(Drink);
         Drink.setBounds(600, 120, 130, 30);
+
+        jButton2.setText("CheckAllOrder");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(810, 40, 180, 29);
 
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
@@ -306,6 +316,12 @@ public class Maindish extends javax.swing.JFrame {
         md.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       AllOrder al = new AllOrder(username);
+        this.setVisible(false);
+        al.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,6 +369,7 @@ public class Maindish extends javax.swing.JFrame {
     private javax.swing.JButton SignOut;
     private javax.swing.JLabel Total;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -22,11 +22,11 @@ public class AllOrder extends javax.swing.JFrame {
      * Creates new form AllOrder
      */
     private int username = -1;
-    public AllOrder(int user) {
-        username = user;
+    public AllOrder() {
         initComponents();
     }
-    public AllOrder() {
+     public AllOrder(int user) {
+        username = user;
         initComponents();
     }
 
@@ -36,27 +36,26 @@ public class AllOrder extends javax.swing.JFrame {
             Orderdetail.setModel(new DefaultTableModel());
             DefaultTableModel model = (DefaultTableModel) Orderdetail.getModel();
             model.addColumn("UserID");
-            model.addColumn("OrderID");
-            model.addColumn("Orderdate");
+            model.addColumn("FirstName");
             model.addColumn("MenuName");
             model.addColumn("MenuPrice");
             model.addColumn("Quantity");
             model.addColumn("Total");
 
             Connection con = ConnectionBuilder.getConnection();
-            String sql = "select o.Totalprice, From Orders o join User u on o.User_UserID = u.UserID "
-                    + "join MenuDetail d on o.Order_ID = d.Orders_OrderID join Menu m on d.Menu_MenuID = m.Menu_ID ";
+            String sql = "select o.Totalprice,u.User_ID,u.FirstName,d.Quantity,m.Menu_Name,m.Menu_Price From Orders o join User u on o.User_UserID = u.User_ID "
+                    + "join MenuDetail d on o.Order_ID = d.Orders_OrderID join Menu m on d.Menu_MenuID = m.Menu_ID WHERE u.User_ID = 1";
             s = con.createStatement();
             ResultSet rs = s.executeQuery(sql);
             int row = 0;
             while (rs != null && rs.next()) {
                 model.addRow(new Object[0]);
-                model.setValueAt(rs.getString("m.Menu_ID"), row, 0);
-                model.setValueAt(rs.getString("m.Menu_Name"), row, 1);
-                model.setValueAt(rs.getString("m.Menu_Description"), row, 2);
+                model.setValueAt(rs.getString("u.User_ID"), row, 0);
+                model.setValueAt(rs.getString("u.FirstName"), row, 1);
+                model.setValueAt(rs.getString("m.Menu_Name"), row, 2);
                 model.setValueAt(rs.getString("m.Menu_Price"), row, 3);
-                model.setValueAt(rs.getString("s.Status_Name"), row, 4);
-                model.setValueAt(rs.getString("t.Type_Name"), row, 5);
+                model.setValueAt(rs.getString("d.Quantity"), row, 4);
+                model.setValueAt(rs.getString("o.Totalprice"), row, 5);
             
 
                 row++;
@@ -80,9 +79,12 @@ public class AllOrder extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Orderdetail = new javax.swing.JTable();
         CheckDetail = new javax.swing.JButton();
+        Signout = new javax.swing.JButton();
+        Homepage = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(null);
 
         Orderdetail.setModel(new javax.swing.table.DefaultTableModel(
@@ -99,19 +101,60 @@ public class AllOrder extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Orderdetail);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(240, 190, 570, 490);
+        jScrollPane1.setBounds(30, 210, 810, 490);
 
         CheckDetail.setText("Detail");
+        CheckDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckDetailActionPerformed(evt);
+            }
+        });
         getContentPane().add(CheckDetail);
-        CheckDetail.setBounds(850, 220, 81, 29);
+        CheckDetail.setBounds(900, 210, 81, 29);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/chi1.jpg"))); // NOI18N
+        Signout.setText("Signout");
+        Signout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignoutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Signout);
+        Signout.setBounds(890, 170, 92, 29);
+
+        Homepage.setText("Homepage");
+        Homepage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomepageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Homepage);
+        Homepage.setBounds(30, 170, 111, 29);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/workWel.jpg"))); // NOI18N
         Background.setText("jLabel1");
         getContentPane().add(Background);
         Background.setBounds(0, 0, 1080, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CheckDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckDetailActionPerformed
+        allDetail();
+    }//GEN-LAST:event_CheckDetailActionPerformed
+
+    private void SignoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignoutActionPerformed
+        username = -1;
+        
+        Welcome wel = new Welcome();
+        this.setVisible(false);
+        wel.setVisible(true);
+    }//GEN-LAST:event_SignoutActionPerformed
+
+    private void HomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomepageActionPerformed
+        Welcomeuser user = new Welcomeuser(username);
+        this.setVisible(false);
+        user.setVisible(true);
+    }//GEN-LAST:event_HomepageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,7 +195,9 @@ public class AllOrder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton CheckDetail;
+    private javax.swing.JButton Homepage;
     private javax.swing.JTable Orderdetail;
+    private javax.swing.JButton Signout;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

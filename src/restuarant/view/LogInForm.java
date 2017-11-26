@@ -147,7 +147,7 @@ public class LogInForm extends javax.swing.JFrame {
                     Role = rs.getString("Role_RoleID");
                     UserIDReal = rs.getInt("User_ID");
 //                    System.out.println(UserIDReal);
-                    //System.out.println(Role);
+//                    System.out.println(Role);
 
                 } else {
                     //System.out.println("fail");

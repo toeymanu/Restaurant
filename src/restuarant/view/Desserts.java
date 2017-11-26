@@ -64,6 +64,7 @@ public class Desserts extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         AllDrink = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
+        checkall = new javax.swing.JButton();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -181,6 +182,15 @@ public class Desserts extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(70, 200, 300, 50);
 
+        checkall.setText("CheckDetail");
+        checkall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkallActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkall);
+        checkall.setBounds(860, 90, 120, 30);
+
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/dessert1.jpg"))); // NOI18N
         getContentPane().add(BG);
         BG.setBounds(0, 10, 1080, 720);
@@ -227,6 +237,12 @@ public class Desserts extends javax.swing.JFrame {
         description.setText(menu[2]);
     }//GEN-LAST:event_AllDrinkValueChanged
 
+    private void checkallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkallActionPerformed
+            AllOrder al = new AllOrder(username);
+        this.setVisible(false);
+        al.setVisible(true);
+    }//GEN-LAST:event_checkallActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,6 +286,7 @@ public class Desserts extends javax.swing.JFrame {
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
     private javax.swing.JButton SignOut;
+    private javax.swing.JButton checkall;
     private javax.swing.JTextArea description;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
