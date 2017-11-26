@@ -21,9 +21,15 @@ public class AllOrder extends javax.swing.JFrame {
     /**
      * Creates new form AllOrder
      */
+    private int username = -1;
+    public AllOrder(int user) {
+        username = user;
+        initComponents();
+    }
     public AllOrder() {
         initComponents();
     }
+
     public void allDetail(){
         Statement s = null;
         try {
@@ -38,7 +44,8 @@ public class AllOrder extends javax.swing.JFrame {
             model.addColumn("Total");
 
             Connection con = ConnectionBuilder.getConnection();
-            String sql = "select ";
+            String sql = "select o.Totalprice, From Orders o join User u on o.User_UserID = u.UserID "
+                    + "join MenuDetail d on o.Order_ID = d.Orders_OrderID join Menu m on d.Menu_MenuID = m.Menu_ID ";
             s = con.createStatement();
             ResultSet rs = s.executeQuery(sql);
             int row = 0;

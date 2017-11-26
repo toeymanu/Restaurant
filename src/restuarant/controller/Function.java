@@ -219,24 +219,22 @@ public class Function {
         return lastID;
     }
 
-    public boolean updateOrders() {
-        int Quan = 0;
-        int pri = 0;
-        try {
-            Connection con = ConnectionBuilder.getConnection();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("Select m.Menu_Price,d.Quantity From Menu m join MenuDetail d on m.Menu_ID = d.Menu_MenuID");
-            if (rs.next()) {
-                Quan = rs.getInt("d.Quantity");
-                pri = rs.getInt("m.Menu_Price");
-            }
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Function.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
+    public void updateOrder(int orid,double totalprice){
 
+        Connection conn = ConnectionBuilder.getConnection();
+        String sql = "UPDATE Orders SET TotalPrice = ? WHERE Order_Id=?";
+        PreparedStatement pstm;        
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setDouble(1, totalprice);
+            pstm.setInt(2, orid);     
+   
+            pstm.executeUpdate();
+            conn.close();
+        } catch (SQLException ex) {
+            
+        }
+    }
     public static String getFirstName(int UserIDReal) {
         int id = LogInForm.UserIDReal;
         try {
@@ -274,7 +272,25 @@ public class Function {
         }
         return lastname;
     }
-
+    public static double getSumPrice(int orderId) {
+        //int id = LogInForm.UserIDReal;
+        double sum = 0.0;
+        try {
+            Connection con = ConnectionBuilder.getConnection();
+            String sql = "select SUM(m.Menu_price*md.quantity) FROM MenuDetail md JOIN Menu m ON md.menu_menuid = m.Menu_ID WHERE md.Orders_OrderID = ?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setInt(1, orderId);
+            ResultSet rs = pre.executeQuery();
+            if (rs.next()) {
+                sum = rs.getDouble(1);
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Function.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sum;
+    }
+    
     public static String getTel(int UserIDReal) {
         int id = LogInForm.UserIDReal;
         try {

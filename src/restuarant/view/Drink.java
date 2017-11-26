@@ -60,13 +60,17 @@ public class Drink extends javax.swing.JFrame {
         SignOut = new javax.swing.JButton();
         Drink = new javax.swing.JButton();
         pic1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         Namepic1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AllDrink = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        Price = new javax.swing.JLabel();
+        pr = new javax.swing.JLabel();
+        menuid = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         Background = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 720));
@@ -135,11 +139,15 @@ public class Drink extends javax.swing.JFrame {
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pic1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pic1Layout.setVerticalGroup(
             pic1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pic1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(pic1);
@@ -180,14 +188,27 @@ public class Drink extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(100, 580, 550, 120);
 
+        Price.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        getContentPane().add(Price);
+        Price.setBounds(720, 600, 110, 30);
+
+        pr.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        pr.setText("Price :");
+        getContentPane().add(pr);
+        pr.setBounds(660, 600, 60, 20);
+
+        menuid.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        getContentPane().add(menuid);
+        menuid.setBounds(660, 640, 80, 30);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(830, 600, 64, 27);
+
         Background.setForeground(new java.awt.Color(255, 255, 0));
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/drink1.jpg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 1080, 720);
-
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(610, 380, 412, 272);
 
         setBounds(0, 0, 1098, 767);
     }// </editor-fold>//GEN-END:initComponents
@@ -215,6 +236,8 @@ public class Drink extends javax.swing.JFrame {
         String menu[] = Function.getMenu(AllDrink.getSelectedValue());
         Namepic1.setText(menu[0]);
         jTextArea1.setText(menu[2]);
+        Price.setText(menu[3]);
+        menuid.setText(menu[1]);
     }//GEN-LAST:event_AllDrinkValueChanged
 
     private void AllDrinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AllDrinkMouseClicked
@@ -282,11 +305,15 @@ public class Drink extends javax.swing.JFrame {
     private javax.swing.JButton Homepage;
     private javax.swing.JButton Mandish;
     private javax.swing.JLabel Namepic1;
+    private javax.swing.JLabel Price;
     private javax.swing.JButton SignOut;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel menuid;
     private javax.swing.JPanel pic1;
+    private javax.swing.JLabel pr;
     // End of variables declaration//GEN-END:variables
 }

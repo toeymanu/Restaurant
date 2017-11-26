@@ -145,8 +145,6 @@ public class Maindish extends javax.swing.JFrame {
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 102, 0)));
 
-        ImageS.setText("2");
-
         javax.swing.GroupLayout pic1Layout = new javax.swing.GroupLayout(pic1);
         pic1.setLayout(pic1Layout);
         pic1Layout.setHorizontalGroup(
@@ -189,9 +187,10 @@ public class Maindish extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(100, 170, 330, 50);
 
-        jLabel3.setText("Quentity");
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setText("Price :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(610, 580, 60, 30);
+        jLabel3.setBounds(580, 580, 60, 30);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +199,7 @@ public class Maindish extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(680, 580, 96, 27);
+        jComboBox1.setBounds(750, 580, 96, 27);
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -219,12 +218,14 @@ public class Maindish extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(950, 620, 97, 29);
-        getContentPane().add(Total);
-        Total.setBounds(600, 620, 190, 30);
 
-        MenuID1.setText("jLabel4");
+        Total.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        getContentPane().add(Total);
+        Total.setBounds(650, 580, 90, 30);
+
+        MenuID1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         getContentPane().add(MenuID1);
-        MenuID1.setBounds(690, 540, 80, 30);
+        MenuID1.setBounds(580, 540, 90, 30);
 
         Background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiImg/maindish1.jpg"))); // NOI18N
         getContentPane().add(Background1);
@@ -298,8 +299,11 @@ public class Maindish extends javax.swing.JFrame {
 
         Function func = new Function();
         func.putPrice(menu[4], quantity + 1);
+        func.updateOrder(1,func.getSumPrice(1));
         
-
+        Maindish md = new Maindish(username);
+        this.setVisible(false);
+        md.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
